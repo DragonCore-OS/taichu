@@ -1,0 +1,35 @@
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets (IMPORTANT)
+*.pem
+*.key
+.env
+secrets.toml
+
+# Bio-Brain (keep private)
+bio-brain/
+*bio*brain*
+superbrain/
+cdi_scores/
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# Test data
+test_data/
+*.test
