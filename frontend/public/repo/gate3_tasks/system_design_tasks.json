@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "category": "system_design",
+    "description": "系统设计类任务 - 架构设计、技术选型、扩展规划",
+    "count": 10,
+    "created_at": "2026-03-11",
+    "version": "1.0"
+  },
+  "tasks": [
+    {
+      "task_id": "system_design_001",
+      "name": "高并发电商秒杀系统",
+      "complexity": 8,
+      "description": "设计一个支持 100万 QPS 的电商秒杀系统，需要在 3 秒内处理 10 万订单，同时保证数据一致性和库存准确性。系统需要在成本可控的前提下实现高可用。",
+      "requirements": [
+        "系统架构图 (含关键组件)",
+        "流量削峰策略",
+        "库存一致性方案",
+        "降级与熔断机制"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确 ≥4 个核心组件及其职责",
+          "提出 ≥2 种流量削峰方案",
+          "说明库存扣减的并发控制机制",
+          "包含限流/降级/熔断至少 2 种"
+        ],
+        "optional": [
+          "包含容量估算 (服务器/带宽/存储)",
+          "包含压测方案",
+          "包含多机房部署考虑"
+        ]
+      },
+      "evaluation_rubric": {
+        "architecture_clarity": "架构图清晰度和组件划分合理性",
+        "scalability": "水平扩展能力和容量规划",
+        "consistency": "数据一致性方案的可靠性",
+        "cost_efficiency": "成本控制意识"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 18
+    },
+    {
+      "task_id": "system_design_002",
+      "name": "分布式事务一致性方案",
+      "complexity": 9,
+      "description": "公司 A 的微服务架构中，一个业务流程涉及 5 个服务的分布式事务。需要设计事务一致性方案，在可用性和一致性之间找到平衡点。",
+      "requirements": [
+        "分布式事务模式选择",
+        "补偿机制设计",
+        "最终一致性保障",
+        "故障恢复流程"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "对比 ≥2 种分布式事务方案 (如 Saga, TCC, 2PC)",
+          "明确选择并说明理由",
+          "设计补偿事务的具体流程",
+          "说明故障场景下的恢复机制"
+        ],
+        "optional": [
+          "包含幂等性设计",
+          "包含事务监控方案",
+          "包含性能影响评估"
+        ]
+      },
+      "evaluation_rubric": {
+        "pattern_selection": "方案选择的合理性分析",
+        "fault_tolerance": "故障场景的覆盖度",
+        "implementation_detail": "实现细节的完整性",
+        "tradeoff_analysis": "CAP 权衡的清晰表达"
+      },
+      "estimated_tokens": 11000,
+      "max_turns": 20
+    },
+    {
+      "task_id": "system_design_003",
+      "name": "实时推荐系统架构",
+      "complexity": 8,
+      "description": "设计一个支持亿级用户的实时个性化推荐系统，需要在 100ms 内返回推荐结果，同时支持 A/B 测试和模型快速迭代。",
+      "requirements": [
+        "推荐流水线架构",
+        "特征存储方案",
+        "模型 serving 设计",
+        "在线/离线一致性"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确召回、排序、重排各层设计",
+          "提出特征存储方案 (如 Feature Store)",
+          "说明模型部署和版本管理",
+          "包含 A/B 测试框架"
+        ],
+        "optional": [
+          "包含冷启动策略",
+          "包含实时特征计算",
+          "包含推荐解释性方案"
+        ]
+      },
+      "evaluation_rubric": {
+        "latency_optimization": "延迟优化的全面性",
+        "feature_engineering": "特征工程架构的成熟度",
+        "ml_ops": "MLOps 流程的完整性",
+        "experimentation": "实验框架的设计"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 18
+    },
+    {
+      "task_id": "system_design_004",
+      "name": "多租户 SaaS 数据隔离",
+      "complexity": 7,
+      "description": "设计一个支持 10 万企业的多租户 SaaS 系统，需要在共享基础设施和租户数据隔离之间找到平衡，同时支持租户级定制和性能 SLA。",
+      "requirements": [
+        "租户隔离架构 (数据库/缓存/搜索)",
+        "资源配额与限流",
+        "租户级定制方案",
+        "数据迁移与备份"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "对比 Shared vs Dedicated 资源方案",
+          "明确数据隔离级别和实现",
+          "设计租户资源配额机制",
+          "包含租户数据迁移方案"
+        ],
+        "optional": [
+          "包含租户级 schema 定制",
+          "包含跨租户分析限制",
+          "包含租户退出数据清理"
+        ]
+      },
+      "evaluation_rubric": {
+        "isolation_guarantee": "隔离保证的技术深度",
+        "resource_efficiency": "资源共享效率",
+        "customization_flexibility": "定制灵活性设计",
+        "operational_complexity": "运维复杂度控制"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 16
+    },
+    {
+      "task_id": "system_design_005",
+      "name": "全球化数据合规架构",
+      "complexity": 9,
+      "description": "公司 A 的业务覆盖欧美亚三大区，需要满足 GDPR、CCPA、中国网络安全法等不同法规要求。设计全球数据架构，在合规和业务效率间平衡。",
+      "requirements": [
+        "数据分区与驻留策略",
+        "跨境传输合规方案",
+        "统一身份与权限",
+        "审计与数据主体权利"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确三大区数据驻留方案",
+          "设计跨境数据同步机制",
+          "包含 GDPR/CCPA 关键要求应对",
+          "包含数据删除 (Right to be Forgotten) 实现"
+        ],
+        "optional": [
+          "包含数据分类分级",
+          "包含加密密钥管理",
+          "包含合规审计日志"
+        ]
+      },
+      "evaluation_rubric": {
+        "compliance_coverage": "法规覆盖的全面性",
+        "architectural_complexity": "架构复杂度的合理性",
+        "performance_impact": "对性能的影响评估",
+        "operational_overhead": "运维开销控制"
+      },
+      "estimated_tokens": 11000,
+      "max_turns": 20
+    },
+    {
+      "task_id": "system_design_006",
+      "name": "事件溯源与 CQRS 重构",
+      "complexity": 8,
+      "description": "公司 A 核心订单系统需要从事务脚本模式重构为事件溯源 + CQRS 架构，以支持复杂查询和审计需求。需要设计迁移方案，保证业务连续性。",
+      "requirements": [
+        "事件建模与存储",
+        "读写模型分离",
+        "最终一致性处理",
+        "存量数据迁移"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计事件 schema 和存储方案",
+          "明确 Command 和 Query 模型分离",
+          "说明投影 (Projection) 更新机制",
+          "包含存量系统迁移策略"
+        ],
+        "optional": [
+          "包含事件版本管理",
+          "包含快照优化",
+          "包含事件回放测试"
+        ]
+      },
+      "evaluation_rubric": {
+        "event_modeling": "事件建模的完整性",
+        "migration_strategy": "迁移策略的可行性",
+        "consistency_handling": "一致性处理方案",
+        "operational_considerations": "运维考虑周全度"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 18
+    },
+    {
+      "task_id": "system_design_007",
+      "name": "边缘计算 IoT 平台",
+      "complexity": 7,
+      "description": "设计一个支持 1000 万 IoT 设备的边缘计算平台，需要在边缘进行实时数据处理和决策，同时管理海量设备的固件更新和状态监控。",
+      "requirements": [
+        "云边端架构分层",
+        "边缘计算任务调度",
+        "设备管理与 OTA",
+        "离线场景处理"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确云、边、端三层职责",
+          "设计边缘计算任务分发机制",
+          "包含设备注册与生命周期管理",
+          "说明离线时的数据同步"
+        ],
+        "optional": [
+          "包含边缘 AI 推理",
+          "包含设备影子 (Device Shadow)",
+          "包含网络带宽优化"
+        ]
+      },
+      "evaluation_rubric": {
+        "edge_cloud_balance": "云边协同设计",
+        "scalability": "百万级设备扩展性",
+        "offline_capability": "离线场景处理",
+        "security": "边缘安全考虑"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 16
+    },
+    {
+      "task_id": "system_design_008",
+      "name": "实时风控引擎",
+      "complexity": 8,
+      "description": "设计一个支持 10万 TPS 的实时风控引擎，需要在 50ms 内完成规则判断和模型评分，同时支持规则热更新和策略快速调整。",
+      "requirements": [
+        "规则引擎架构",
+        "特征实时计算",
+        "决策流编排",
+        "规则版本管理"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计规则匹配引擎 (Drools/自研等)",
+          "明确特征计算架构 (实时+离线)",
+          "包含决策 DAG 编排设计",
+          "说明规则热更新机制"
+        ],
+        "optional": [
+          "包含模型评分集成",
+          "包含决策结果解释",
+          "包含灰度发布策略"
+        ]
+      },
+      "evaluation_rubric": {
+        "latency_optimization": "低延迟优化策略",
+        "rule_flexibility": "规则灵活性设计",
+        "feature_engineering": "特征工程架构",
+        "ops_friendly": "运维友好度"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 18
+    },
+    {
+      "task_id": "system_design_009",
+      "name": "混合云成本优化架构",
+      "complexity": 7,
+      "description": "公司 A 需要设计混合云架构，在私有云和公有云之间动态调度工作负载，核心要求是成本优化 30% 同时保证性能和合规。",
+      "requirements": [
+        "混合云架构拓扑",
+        "工作负载调度策略",
+        "数据同步与一致性",
+        "成本监控与优化"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确哪些工作负载在私有云/公有云",
+          "设计弹性伸缩触发机制",
+          "包含跨云网络方案",
+          "提供成本对比分析"
+        ],
+        "optional": [
+          "包含云厂商锁定避免策略",
+          "包含灾难恢复跨云设计",
+          "包含 FinOps 监控体系"
+        ]
+      },
+      "evaluation_rubric": {
+        "cost_optimization": "成本优化策略",
+        "architectural_balance": "架构权衡合理性",
+        "operational_complexity": "运维复杂度控制",
+        "vendor_lockin": "厂商锁定避免"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 16
+    },
+    {
+      "task_id": "system_design_010",
+      "name": "零信任安全架构",
+      "complexity": 8,
+      "description": "公司 A 需要从传统边界安全模型迁移到零信任架构，员工分布全球且大量使用 SaaS 应用。设计分阶段迁移方案。",
+      "requirements": [
+        "身份与设备验证",
+        "微分段网络策略",
+        "持续风险评估",
+        "遗留系统集成"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计身份验证流程 (SSO/MFA)",
+          "明确设备信任评估机制",
+          "包含最小权限访问控制",
+          "提供分阶段迁移路线图"
+        ],
+        "optional": [
+          "包含网络微分段实现",
+          "包含持续监控方案",
+          "包含第三方风险评估"
+        ]
+      },
+      "evaluation_rubric": {
+        "security_coverage": "安全覆盖全面性",
+        "user_experience": "用户体验影响",
+        "migration_practicality": "迁移可行性",
+        "operational_overhead": "运维开销"
+      },
+      "estimated_tokens": 9500,
+      "max_turns": 17
+    }
+  ]
+}

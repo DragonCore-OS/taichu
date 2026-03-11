@@ -1,0 +1,321 @@
+{
+  "meta": {
+    "category": "strategic",
+    "description": "战略分析类任务 - 市场进入、竞争策略、资源分配",
+    "count": 10,
+    "created_at": "2026-03-11",
+    "version": "1.0"
+  },
+  "tasks": [
+    {
+      "task_id": "strategic_001",
+      "name": "新兴市场进入策略",
+      "complexity": 7,
+      "description": "公司 A 是成熟的 SaaS 企业，现考虑进入东南亚新兴市场。市场特点: 本地化需求高、支付方式分散、竞争激烈但分散、监管环境复杂。请制定 6 个月进入策略。",
+      "requirements": [
+        "目标国家优先级排序 (有据可依)",
+        "产品本地化重点 (具体可执行)",
+        "GTM (Go-to-Market) 策略",
+        "风险评估与应对"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确给出 ≥2 个目标国家并说明优先级理由",
+          "列出 ≥3 个本地化重点且有具体方案",
+          "识别 ≥3 个风险并有应对措施"
+        ],
+        "optional": [
+          "包含 6 个月里程碑",
+          "包含预算估算",
+          "包含 KPI 定义"
+        ]
+      },
+      "evaluation_rubric": {
+        "completeness": "0-3: 缺少关键要素; 4-6: 基本完整; 7-8: 详细完整; 9-10: 超出预期",
+        "feasibility": "0-3: 不可执行; 4-6: 基本可行; 7-8: 高度可行; 9-10: 立即可执行",
+        "strategic_thinking": "0-3: 表面分析; 4-6: 有一定深度; 7-8: 深度洞察; 9-10: 战略级洞察"
+      },
+      "estimated_tokens": 8000,
+      "max_turns": 15
+    },
+    {
+      "task_id": "strategic_002",
+      "name": "竞争对手价格战应对",
+      "complexity": 6,
+      "description": "主要竞争对手 B 突然发起价格战，核心产品降价 40%。公司 A 市场份额连续 3 季度下滑。需要在不陷入纯价格竞争的前提下制定应对策略。",
+      "requirements": [
+        "分析价格战的真实意图",
+        "差异化定位策略",
+        "短期止血 + 中长期反击",
+        "客户分层应对"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析竞争对手 ≥2 种可能意图",
+          "提出 ≥2 条差异化策略 (非价格)",
+          "区分短期(3个月)和长期(1年)策略"
+        ],
+        "optional": [
+          "包含客户分层方案",
+          "包含定价策略调整",
+          "包含产品组合优化"
+        ]
+      },
+      "evaluation_rubric": {
+        "competitive_analysis": "对竞争态势理解的深度",
+        "differentiation": "非价格竞争策略的创新性",
+        "actionability": "策略的可执行性和时间线清晰度"
+      },
+      "estimated_tokens": 7000,
+      "max_turns": 12
+    },
+    {
+      "task_id": "strategic_003",
+      "name": "技术栈现代化路线图",
+      "complexity": 8,
+      "description": "公司 A 核心产品基于 10 年前的技术栈，债务累积严重。需要制定 2 年技术现代化路线图，平衡: (1) 业务连续性 (2) 技术债务清理 (3) 新功能开发。",
+      "requirements": [
+        "技术债务评估与优先级",
+        "分阶段迁移计划",
+        "风险缓解措施",
+        "投资回报估算"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "识别 ≥3 类技术债务并排序",
+          "明确分阶段计划 (至少 4 个阶段)",
+          "说明如何平衡业务连续性"
+        ],
+        "optional": [
+          "包含 ROI 估算",
+          "包含团队技能转型计划",
+          "包含回滚方案"
+        ]
+      },
+      "evaluation_rubric": {
+        "technical_depth": "对技术债务理解的准确性",
+        "migration_plan": "路线图的可行性和完整性",
+        "risk_management": "风险识别和缓解措施的充分性"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 18
+    },
+    {
+      "task_id": "strategic_004",
+      "name": "并购目标筛选与整合",
+      "complexity": 9,
+      "description": "公司 A 计划通过并购快速进入 AI 领域。已接触 3 家潜在目标公司，各有优劣。需要: (1) 筛选最优目标 (2) 设计整合方案 (3) 识别整合风险。",
+      "requirements": [
+        "三家目标公司对比分析",
+        "选择决策逻辑",
+        "100天整合计划",
+        "文化融合策略"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "对 3 家目标进行 ≥5 维度对比",
+          "明确选择并说明理由",
+          "列出整合后前 100 天关键里程碑"
+        ],
+        "optional": [
+          "包含估值分析",
+          "包含尽职调查清单",
+          "包含文化融合详细方案"
+        ]
+      },
+      "evaluation_rubric": {
+        "due_diligence": "分析框架的全面性和深度",
+        "integration_planning": "整合计划的可执行性",
+        "risk_assessment": "对并购风险的认识"
+      },
+      "estimated_tokens": 12000,
+      "max_turns": 20
+    },
+    {
+      "task_id": "strategic_005",
+      "name": "供应链韧性重构",
+      "complexity": 7,
+      "description": "全球供应链中断频发，公司 A 的关键零部件 80% 依赖单一供应商。需要制定供应链韧性策略，平衡成本、效率和抗风险能力。",
+      "requirements": [
+        "当前供应链脆弱性分析",
+        "多源采购策略",
+        "库存策略调整",
+        "供应商关系重构"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "识别 ≥3 个脆弱节点",
+          "提出 ≥2 个多源方案",
+          "说明成本与韧性的权衡"
+        ],
+        "optional": [
+          "包含库存水位建议",
+          "包含供应商评估框架",
+          "包含应急预案"
+        ]
+      },
+      "evaluation_rubric": {
+        "risk_identification": "对供应链风险的认识深度",
+        "solution_creativity": "多源和缓冲策略的创新性",
+        "cost_balance": "成本与韧性权衡的合理性"
+      },
+      "estimated_tokens": 8500,
+      "max_turns": 15
+    },
+    {
+      "task_id": "strategic_006",
+      "name": "产品组合优化决策",
+      "complexity": 6,
+      "description": "公司 A 有 12 条产品线，资源分散，部分产品长期亏损。需要: (1) 评估各产品战略价值 (2) 决定投资/维持/退出 (3) 资源再分配方案。",
+      "requirements": [
+        "产品组合评估框架",
+        "每条产品线的战略定位",
+        "投资决策矩阵",
+        "资源重新分配"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "使用明确框架评估产品 (如 BCG 矩阵)",
+          "对 ≥8 条产品给出明确决策",
+          "说明资源再分配逻辑"
+        ],
+        "optional": [
+          "包含退出产品的过渡方案",
+          "包含投资产品的增长策略",
+          "包含财务影响估算"
+        ]
+      },
+      "evaluation_rubric": {
+        "framework_application": "战略框架应用的恰当性",
+        "decision_clarity": "决策逻辑的清晰度和一致性",
+        "resource_allocation": "资源分配方案的可行性"
+      },
+      "estimated_tokens": 7500,
+      "max_turns": 14
+    },
+    {
+      "task_id": "strategic_007",
+      "name": "数字化转型路径",
+      "complexity": 8,
+      "description": "传统企业 A 需要全面数字化转型，但遗留系统复杂，员工数字化能力参差。需要制定 3 年转型路径，包括技术、组织、文化三个维度。",
+      "requirements": [
+        "现状数字化成熟度评估",
+        "技术架构演进路线",
+        "组织变革计划",
+        "变革管理与文化"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "评估当前数字化水平",
+          "明确 3 年分阶段目标",
+          "涵盖技术、组织、文化三个维度"
+        ],
+        "optional": [
+          "包含变革阻力应对",
+          "包含人才发展计划",
+          "包含技术栈选型"
+        ]
+      },
+      "evaluation_rubric": {
+        "holistic_approach": "是否兼顾技术、组织、文化",
+        "change_management": "变革管理的细致程度",
+        "practicality": "转型路径的可执行性"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 18
+    },
+    {
+      "task_id": "strategic_008",
+      "name": "生态系统合作策略",
+      "complexity": 7,
+      "description": "公司 A 希望从单打独斗转向生态合作，但面临: 与谁合作、合作深度、利益分配、竞争边界等复杂问题。需要设计生态战略。",
+      "requirements": [
+        "生态系统地图",
+        "合作伙伴筛选标准",
+        "合作模式设计",
+        "竞合边界管理"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "绘制生态地图并识别 ≥3 类参与者",
+          "提出 ≥2 种合作模式",
+          "说明竞合边界如何管理"
+        ],
+        "optional": [
+          "包含合作伙伴评估框架",
+          "包含利益分配机制",
+          "包含生态治理结构"
+        ]
+      },
+      "evaluation_rubric": {
+        "ecosystem_understanding": "对生态系统的理解深度",
+        "partnership_design": "合作模式设计的创新性",
+        "boundary_management": "竞合边界管理的合理性"
+      },
+      "estimated_tokens": 8000,
+      "max_turns": 15
+    },
+    {
+      "task_id": "strategic_009",
+      "name": "危机公关与声誉修复",
+      "complexity": 8,
+      "description": "公司 A 发生重大数据泄露事件，媒体负面报道铺天盖地，客户信任度骤降。需要制定危机应对和声誉修复策略，控制损失并重建信任。",
+      "requirements": [
+        "危机应对时间表 (黄金 24 小时等)",
+        "内外沟通策略",
+        "技术修复与透明化",
+        "长期声誉重建"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确时间线 (0-24h, 1-7天, 1-3个月)",
+          "区分对内和对外沟通策略",
+          "提出 ≥3 个重建信任措施"
+        ],
+        "optional": [
+          "包含媒体应对脚本",
+          "包含客户补偿方案",
+          "包含合规报告策略"
+        ]
+      },
+      "evaluation_rubric": {
+        "urgency_handling": "危机应对的时效性",
+        "communication_strategy": "沟通策略的恰当性",
+        "trust_rebuilding": "信任重建措施的系统性"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 16
+    },
+    {
+      "task_id": "strategic_010",
+      "name": "可持续发展战略",
+      "complexity": 6,
+      "description": "投资者和监管机构要求公司 A 制定 ESG 战略，但担心成本过高影响竞争力。需要将可持续发展融入战略，而非仅做 CSR。",
+      "requirements": [
+        "ESG 现状评估",
+        "实质性议题识别",
+        "商业与可持续性的结合点",
+        "路线图与里程碑"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "识别 ≥3 个实质性 ESG 议题",
+          "说明如何与商业战略结合 (不只是成本)",
+          "明确 3 年目标和里程碑"
+        ],
+        "optional": [
+          "包含投资回报分析",
+          "包含利益相关方参与计划",
+          "包含披露框架选择"
+        ]
+      },
+      "evaluation_rubric": {
+        "integration_depth": "ESG 与商业战略结合的深度",
+        "practicality": "战略的可执行性",
+        "stakeholder_consideration": "利益相关方考虑的全面性"
+      },
+      "estimated_tokens": 7500,
+      "max_turns": 14
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, system-ui, sans-serif; }
+.pixel {
+  image-rendering: pixelated;
+  background-image: linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
