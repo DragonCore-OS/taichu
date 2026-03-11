@@ -1,0 +1,37 @@
+{
+  "shadow_id": "SHADOW-R17-4-VALIDATION",
+  "config": {
+    "deliberation_threshold": 70.0,
+    "review_threshold": 80.0,
+    "review_threshold_by_source": {
+      "live_auto": 78.0,
+      "live_manual": 80.0,
+      "replay_real": 80.0
+    }
+  },
+  "metrics": {
+    "alignment_rate": 0.86,
+    "fb_rate": 0.1
+  },
+  "source_breakdown": {
+    "live_manual": {
+      "count": 24,
+      "fb_rate": 0.125
+    },
+    "live_auto": {
+      "count": 15,
+      "fb_rate": 0.0667
+    },
+    "replay_real": {
+      "count": 11,
+      "fb_rate": 0.0909
+    }
+  },
+  "verdict": {
+    "fb_threshold_met": true,
+    "alignment_threshold_met": true,
+    "live_auto_fb_threshold_met": true,
+    "all_pass": true,
+    "recommendation": "Promote"
+  }
+}
