@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "description": "Round 17.4 Step 1: live_auto false-block 样本提取",
+    "source": "SHADOW-20260311-PROD_observations.jsonl",
+    "extracted_at": "2026-03-11",
+    "total_samples": 6,
+    "criteria": {
+      "source_type": "live_auto",
+      "false_block_detected": true
+    }
+  },
+  "statistics": {
+    "by_issue_type": {
+      "technical_decision": 1,
+      "routine_review": 1,
+      "strategic_initiative": 1,
+      "compliance_check": 1,
+      "risk_assessment": 1,
+      "policy_change": 1
+    },
+    "by_risk_level": {
+      "medium": 3,
+      "high": 3
+    }
+  },
+  "samples": [
+    {
+      "id": "OBS-83edbf9afd08",
+      "meeting_id": "MTG-LA-003",
+      "issue_type": "technical_decision",
+      "risk_level": "medium",
+      "legacy_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "scores": {
+        "deliberation": 74,
+        "review": 63
+      },
+      "failed_checks": ["deliberation_minimum", "review_minimum"],
+      "pattern": "D接近门槛(74<75), R显著低于门槛(63<80)"
+    },
+    {
+      "id": "OBS-18025860c1c0",
+      "meeting_id": "MTG-LA-006",
+      "issue_type": "routine_review",
+      "risk_level": "medium",
+      "legacy_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "scores": {
+        "deliberation": 62,
+        "review": 75
+      },
+      "failed_checks": ["deliberation_minimum", "review_minimum", "defect_check"],
+      "pattern": "D明显低于门槛(62<75), R接近门槛(75<80), 有defect"
+    },
+    {
+      "id": "OBS-d60b7da27330",
+      "meeting_id": "MTG-LA-007",
+      "issue_type": "strategic_initiative",
+      "risk_level": "high",
+      "legacy_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "scores": {
+        "deliberation": 61,
+        "review": 54
+      },
+      "failed_checks": ["deliberation_minimum", "review_minimum", "defect_check"],
+      "pattern": "D和R均显著低于门槛, high risk但legacy放行"
+    },
+    {
+      "id": "OBS-27836ab5ed08",
+      "meeting_id": "MTG-LA-024",
+      "issue_type": "compliance_check",
+      "risk_level": "medium",
+      "legacy_decision": "approved",
+      "shadow_decision": "requires_deliberation",
+      "scores": {
+        "deliberation": 62,
+        "review": 70
+      },
+      "failed_checks": ["deliberation_minimum", "review_minimum"],
+      "pattern": "D和R均低于门槛, 但legacy完全放行(approved)"
+    },
+    {
+      "id": "OBS-e1b2719edf50",
+      "meeting_id": "MTG-LA-044",
+      "issue_type": "risk_assessment",
+      "risk_level": "high",
+      "legacy_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "scores": {
+        "deliberation": 65,
+        "review": 79
+      },
+      "failed_checks": ["deliberation_minimum", "review_minimum"],
+      "pattern": "D低于门槛(65<75), R接近门槛(79<80), high risk"
+    },
+    {
+      "id": "OBS-84048e98935a",
+      "meeting_id": "MTG-LA-045",
+      "issue_type": "policy_change",
+      "risk_level": "high",
+      "legacy_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "scores": {
+        "deliberation": 67,
+        "review": 73
+      },
+      "failed_checks": ["deliberation_minimum", "review_minimum"],
+      "pattern": "D和R均低于门槛但接近, high risk policy change"
+    }
+  ],
+  "initial_analysis": {
+    "common_patterns": [
+      "所有样本 deliberation_score 均 < 75 (门槛)",
+      "所有样本 review_score 均 < 80 (门槛)",
+      "50% 为 high risk, 50% 为 medium risk",
+      "legacy 决策多为 conditional_approved 或 approved",
+      "主要失败原因: D和R双低或接近门槛"
+    ],
+    "suspected_root_causes": [
+      "阈值问题: D=70, R=80 可能对 live_auto 过严",
+      "上下文缺失: live_auto 议题缺乏足够背景信息",
+      "评分聚合偏差: D和R的加权方式对自动议题不友好"
+    ]
+  }
+}
