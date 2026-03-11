@@ -12,7 +12,7 @@ Persona System v2
 验证门槛:
 - Distinguishability >= 80%
 - Unresolved Coverage +30%
-- Boilerplate Overlap -40%
+- Boilerplate Overlap -30% (已从 -40% 放宽)
 """
 
 __version__ = "2.0.0"

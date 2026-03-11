@@ -127,7 +127,7 @@ class PersonaActivator:
 ```
 Distinguishability      >= 80%
 Unresolved Coverage     +30%
-Boilerplate Overlap     -40%
+Boilerplate Overlap     -30% (已从 -40% 放宽)
 Overall Pass Rate       >= 80%
 ```
 

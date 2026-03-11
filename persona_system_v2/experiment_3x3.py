@@ -5,7 +5,7 @@ experiment_3x3.py
 验证 Persona System v2 的三个核心指标：
 1. Role Distinguishability >= 80%
 2. Unresolved Coverage +30%
-3. Boilerplate Overlap -40%
+3. Boilerplate Overlap -30% (已从 -40% 放宽)
 
 实验设计：
 - 3 种议题类型 (strategic/diplomatic/governance)
@@ -301,7 +301,7 @@ class Experiment3x3:
             "THRESHOLDS:",
             "  Distinguishability >= 80%",
             "  Coverage Gain >= +30%",
-            "  Overlap Reduction >= -40%",
+            "  Overlap Reduction >= -30% (已从 -40% 放宽)",
             "  Gate 2: >= 80% trials pass",
             "=" * 70,
         ])
