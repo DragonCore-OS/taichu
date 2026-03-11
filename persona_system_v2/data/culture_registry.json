@@ -1,0 +1,84 @@
+{
+  "cultures": {
+    "zongheng": {
+      "lineage": "纵横家",
+      "core_texts": [
+        "鬼谷子",
+        "战国策"
+      ],
+      "historical_period": "战国时期",
+      "key_concepts": [
+        "合纵",
+        "连横",
+        "权谋",
+        "游说",
+        "利害"
+      ]
+    },
+    "ru": {
+      "lineage": "儒家",
+      "core_texts": [
+        "论语",
+        "孟子",
+        "大学",
+        "中庸"
+      ],
+      "historical_period": "春秋战国时期",
+      "key_concepts": [
+        "仁",
+        "义",
+        "礼",
+        "智",
+        "信",
+        "修身",
+        "治国"
+      ]
+    },
+    "dao": {
+      "lineage": "道家",
+      "core_texts": [
+        "道德经",
+        "庄子"
+      ],
+      "historical_period": "春秋战国时期",
+      "key_concepts": [
+        "道",
+        "德",
+        "无为",
+        "自然",
+        "虚实"
+      ]
+    },
+    "fa": {
+      "lineage": "法家",
+      "core_texts": [
+        "韩非子",
+        "商君书"
+      ],
+      "historical_period": "战国时期",
+      "key_concepts": [
+        "法",
+        "术",
+        "势",
+        "刑名",
+        "赏罚"
+      ]
+    },
+    "bing": {
+      "lineage": "兵家",
+      "core_texts": [
+        "孙子兵法",
+        "吴子",
+        "六韬"
+      ],
+      "historical_period": "春秋战国时期",
+      "key_concepts": [
+        "兵者",
+        "诡道",
+        "攻守",
+        "虚实",
+        "奇正"
+      ]
+    }
+  }
+}
