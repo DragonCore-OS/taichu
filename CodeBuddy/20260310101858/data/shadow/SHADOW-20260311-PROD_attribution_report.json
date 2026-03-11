@@ -1,0 +1,1455 @@
+{
+  "report_id": "FBA-20260311-121218",
+  "shadow_id": "SHADOW-20260311-PROD",
+  "generated_at": "2026-03-11T12:12:18.902346",
+  "summary": {
+    "total_observations": 50,
+    "false_block_cases": 19,
+    "accepted_risk_cases": 17,
+    "false_block_rate": 0.38
+  },
+  "reports": {
+    "source_type": {
+      "live_manual": {
+        "total": 30,
+        "false_block": 12,
+        "false_block_rate": 0.4,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-001",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 70,
+            "review_score": 78,
+            "shadow_confidence": 0.9089063075350071
+          },
+          {
+            "meeting_id": "MTG-LM-004",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 61,
+            "review_score": 76,
+            "shadow_confidence": 0.8070905012216169
+          },
+          {
+            "meeting_id": "MTG-LM-021",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 64,
+            "review_score": 70,
+            "shadow_confidence": 0.8274139756851309
+          },
+          {
+            "meeting_id": "MTG-LM-023",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 68,
+            "review_score": 78,
+            "shadow_confidence": 0.9758533999166146
+          },
+          {
+            "meeting_id": "MTG-LM-026",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "rejected",
+            "deliberation_score": 47,
+            "review_score": 43,
+            "shadow_confidence": 0.792527646569126
+          },
+          {
+            "meeting_id": "MTG-LM-027",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 67,
+            "review_score": 77,
+            "shadow_confidence": 0.9039650944054671
+          },
+          {
+            "meeting_id": "MTG-LM-029",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 70,
+            "review_score": 83,
+            "shadow_confidence": 0.8837750301194948
+          },
+          {
+            "meeting_id": "MTG-LM-031",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 51,
+            "review_score": 56,
+            "shadow_confidence": 0.8558057103864848
+          },
+          {
+            "meeting_id": "MTG-LM-032",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 71,
+            "review_score": 64,
+            "shadow_confidence": 0.9429015860985408
+          },
+          {
+            "meeting_id": "MTG-LM-033",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 70,
+            "review_score": 66,
+            "shadow_confidence": 0.769743905539862
+          },
+          {
+            "meeting_id": "MTG-LM-034",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 61,
+            "review_score": 67,
+            "shadow_confidence": 0.8938211237923979
+          },
+          {
+            "meeting_id": "MTG-LM-050",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 74,
+            "review_score": 76,
+            "shadow_confidence": 0.895547738562177
+          }
+        ]
+      },
+      "live_auto": {
+        "total": 15,
+        "false_block": 6,
+        "false_block_rate": 0.4,
+        "cases": [
+          {
+            "meeting_id": "MTG-LA-003",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 74,
+            "review_score": 63,
+            "shadow_confidence": 0.8772933676331565
+          },
+          {
+            "meeting_id": "MTG-LA-006",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 62,
+            "review_score": 75,
+            "shadow_confidence": 0.8665432324673057
+          },
+          {
+            "meeting_id": "MTG-LA-007",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 61,
+            "review_score": 54,
+            "shadow_confidence": 0.8998500989348188
+          },
+          {
+            "meeting_id": "MTG-LA-024",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 62,
+            "review_score": 70,
+            "shadow_confidence": 0.9228969046477903
+          },
+          {
+            "meeting_id": "MTG-LA-044",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 65,
+            "review_score": 79,
+            "shadow_confidence": 0.8638660808922892
+          },
+          {
+            "meeting_id": "MTG-LA-045",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 67,
+            "review_score": 73,
+            "shadow_confidence": 0.9680795170587284
+          }
+        ]
+      },
+      "replay_real": {
+        "total": 5,
+        "false_block": 1,
+        "false_block_rate": 0.2,
+        "cases": [
+          {
+            "meeting_id": "MTG-RR-012",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation",
+            "deliberation_score": 71,
+            "review_score": 65,
+            "shadow_confidence": 0.9024432725060949
+          }
+        ]
+      }
+    },
+    "topic_type": {
+      "technical_decision": {
+        "total": 6,
+        "disagreement": 5,
+        "disagreement_rate": 0.8333333333333334,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-001",
+            "source_type": "live_manual",
+            "risk_level": "medium",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LA-003",
+            "source_type": "live_auto",
+            "risk_level": "medium",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-023",
+            "source_type": "live_manual",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-026",
+            "source_type": "live_manual",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "rejected"
+          },
+          {
+            "meeting_id": "MTG-LM-028",
+            "source_type": "live_manual",
+            "risk_level": "medium",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "approved"
+          }
+        ]
+      },
+      "budget_allocation": {
+        "total": 4,
+        "disagreement": 3,
+        "disagreement_rate": 0.75,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-002",
+            "source_type": "live_manual",
+            "risk_level": "high",
+            "legacy_decision": "rejected",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-004",
+            "source_type": "live_manual",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-046",
+            "source_type": "live_manual",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "requires_deliberation"
+          }
+        ]
+      },
+      "contract_review": {
+        "total": 2,
+        "disagreement": 0,
+        "disagreement_rate": 0.0,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": []
+      },
+      "routine_review": {
+        "total": 7,
+        "disagreement": 5,
+        "disagreement_rate": 0.7142857142857143,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LA-006",
+            "source_type": "live_auto",
+            "risk_level": "medium",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-016",
+            "source_type": "live_manual",
+            "risk_level": "critical",
+            "legacy_decision": "rejected",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-RR-025",
+            "source_type": "replay_real",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-RR-042",
+            "source_type": "replay_real",
+            "risk_level": "critical",
+            "legacy_decision": "rejected",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-050",
+            "source_type": "live_manual",
+            "risk_level": "low",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation"
+          }
+        ]
+      },
+      "strategic_initiative": {
+        "total": 6,
+        "disagreement": 6,
+        "disagreement_rate": 1.0,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LA-007",
+            "source_type": "live_auto",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LA-008",
+            "source_type": "live_auto",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LA-015",
+            "source_type": "live_auto",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LA-018",
+            "source_type": "live_auto",
+            "risk_level": "critical",
+            "legacy_decision": "rejected",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-RR-035",
+            "source_type": "replay_real",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "rejected"
+          },
+          {
+            "meeting_id": "MTG-LM-048",
+            "source_type": "live_manual",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "rejected"
+          }
+        ]
+      },
+      "policy_change": {
+        "total": 6,
+        "disagreement": 3,
+        "disagreement_rate": 0.5,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-009",
+            "source_type": "live_manual",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "rejected"
+          },
+          {
+            "meeting_id": "MTG-RR-010",
+            "source_type": "replay_real",
+            "risk_level": "critical",
+            "legacy_decision": "rejected",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LA-045",
+            "source_type": "live_auto",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          }
+        ]
+      },
+      "risk_assessment": {
+        "total": 5,
+        "disagreement": 4,
+        "disagreement_rate": 0.8,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LA-011",
+            "source_type": "live_auto",
+            "risk_level": "critical",
+            "legacy_decision": "rejected",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-039",
+            "source_type": "live_manual",
+            "risk_level": "critical",
+            "legacy_decision": "rejected",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LA-043",
+            "source_type": "live_auto",
+            "risk_level": "medium",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "approved"
+          },
+          {
+            "meeting_id": "MTG-LA-044",
+            "source_type": "live_auto",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          }
+        ]
+      },
+      "resource_planning": {
+        "total": 2,
+        "disagreement": 2,
+        "disagreement_rate": 1.0,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-RR-012",
+            "source_type": "replay_real",
+            "risk_level": "low",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-049",
+            "source_type": "live_manual",
+            "risk_level": "critical",
+            "legacy_decision": "blocked",
+            "shadow_decision": "rejected"
+          }
+        ]
+      },
+      "compliance_check": {
+        "total": 9,
+        "disagreement": 7,
+        "disagreement_rate": 0.7777777777777778,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-013",
+            "source_type": "live_manual",
+            "risk_level": "medium",
+            "legacy_decision": "approved",
+            "shadow_decision": "conditional_approved"
+          },
+          {
+            "meeting_id": "MTG-LA-024",
+            "source_type": "live_auto",
+            "risk_level": "medium",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-027",
+            "source_type": "live_manual",
+            "risk_level": "medium",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-029",
+            "source_type": "live_manual",
+            "risk_level": "low",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-031",
+            "source_type": "live_manual",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-032",
+            "source_type": "live_manual",
+            "risk_level": "low",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-034",
+            "source_type": "live_manual",
+            "risk_level": "high",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          }
+        ]
+      },
+      "conflict_resolution": {
+        "total": 3,
+        "disagreement": 3,
+        "disagreement_rate": 1.0,
+        "avg_deliberation_score": 0.0,
+        "avg_review_score": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-017",
+            "source_type": "live_manual",
+            "risk_level": "medium",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "approved"
+          },
+          {
+            "meeting_id": "MTG-LM-021",
+            "source_type": "live_manual",
+            "risk_level": "medium",
+            "legacy_decision": "conditional_approved",
+            "shadow_decision": "requires_deliberation"
+          },
+          {
+            "meeting_id": "MTG-LM-033",
+            "source_type": "live_manual",
+            "risk_level": "low",
+            "legacy_decision": "approved",
+            "shadow_decision": "requires_deliberation"
+          }
+        ]
+      }
+    },
+    "gate_stage": {
+      "deliberation_minimum": {
+        "total_blocks": 34,
+        "by_reason": {
+          "fail": 34
+        },
+        "avg_score_gap": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-001",
+            "source_type": "live_manual",
+            "issue_type": "technical_decision",
+            "score": 70,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-002",
+            "source_type": "live_manual",
+            "issue_type": "budget_allocation",
+            "score": 58,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-003",
+            "source_type": "live_auto",
+            "issue_type": "technical_decision",
+            "score": 74,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-004",
+            "source_type": "live_manual",
+            "issue_type": "budget_allocation",
+            "score": 61,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-006",
+            "source_type": "live_auto",
+            "issue_type": "routine_review",
+            "score": 62,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-007",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 61,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-008",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 50,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-009",
+            "source_type": "live_manual",
+            "issue_type": "policy_change",
+            "score": 36,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-RR-010",
+            "source_type": "replay_real",
+            "issue_type": "policy_change",
+            "score": 65,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-011",
+            "source_type": "live_auto",
+            "issue_type": "risk_assessment",
+            "score": 56,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-RR-012",
+            "source_type": "replay_real",
+            "issue_type": "resource_planning",
+            "score": 71,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-015",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 58,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-016",
+            "source_type": "live_manual",
+            "issue_type": "routine_review",
+            "score": 57,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-018",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 65,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-021",
+            "source_type": "live_manual",
+            "issue_type": "conflict_resolution",
+            "score": 64,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-023",
+            "source_type": "live_manual",
+            "issue_type": "technical_decision",
+            "score": 68,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-024",
+            "source_type": "live_auto",
+            "issue_type": "compliance_check",
+            "score": 62,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-RR-025",
+            "source_type": "replay_real",
+            "issue_type": "routine_review",
+            "score": 66,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-026",
+            "source_type": "live_manual",
+            "issue_type": "technical_decision",
+            "score": 47,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-027",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 67,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-029",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 70,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-031",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 51,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-032",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 71,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-033",
+            "source_type": "live_manual",
+            "issue_type": "conflict_resolution",
+            "score": 70,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-034",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 61,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-RR-035",
+            "source_type": "replay_real",
+            "issue_type": "strategic_initiative",
+            "score": 37,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-039",
+            "source_type": "live_manual",
+            "issue_type": "risk_assessment",
+            "score": 57,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-RR-042",
+            "source_type": "replay_real",
+            "issue_type": "routine_review",
+            "score": 63,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-044",
+            "source_type": "live_auto",
+            "issue_type": "risk_assessment",
+            "score": 65,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LA-045",
+            "source_type": "live_auto",
+            "issue_type": "policy_change",
+            "score": 67,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-046",
+            "source_type": "live_manual",
+            "issue_type": "budget_allocation",
+            "score": 61,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-048",
+            "source_type": "live_manual",
+            "issue_type": "strategic_initiative",
+            "score": 45,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-049",
+            "source_type": "live_manual",
+            "issue_type": "resource_planning",
+            "score": 47,
+            "threshold": 75
+          },
+          {
+            "meeting_id": "MTG-LM-050",
+            "source_type": "live_manual",
+            "issue_type": "routine_review",
+            "score": 74,
+            "threshold": 75
+          }
+        ]
+      },
+      "review_minimum": {
+        "total_blocks": 34,
+        "by_reason": {
+          "fail": 34
+        },
+        "avg_score_gap": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-001",
+            "source_type": "live_manual",
+            "issue_type": "technical_decision",
+            "score": 78,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-002",
+            "source_type": "live_manual",
+            "issue_type": "budget_allocation",
+            "score": 54,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-003",
+            "source_type": "live_auto",
+            "issue_type": "technical_decision",
+            "score": 63,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-004",
+            "source_type": "live_manual",
+            "issue_type": "budget_allocation",
+            "score": 76,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-006",
+            "source_type": "live_auto",
+            "issue_type": "routine_review",
+            "score": 75,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-007",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 54,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-008",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 55,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-009",
+            "source_type": "live_manual",
+            "issue_type": "policy_change",
+            "score": 38,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-RR-010",
+            "source_type": "replay_real",
+            "issue_type": "policy_change",
+            "score": 63,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-011",
+            "source_type": "live_auto",
+            "issue_type": "risk_assessment",
+            "score": 58,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-RR-012",
+            "source_type": "replay_real",
+            "issue_type": "resource_planning",
+            "score": 65,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-015",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 57,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-016",
+            "source_type": "live_manual",
+            "issue_type": "routine_review",
+            "score": 52,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-017",
+            "source_type": "live_manual",
+            "issue_type": "conflict_resolution",
+            "score": 77,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-018",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": 51,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-021",
+            "source_type": "live_manual",
+            "issue_type": "conflict_resolution",
+            "score": 70,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-023",
+            "source_type": "live_manual",
+            "issue_type": "technical_decision",
+            "score": 78,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-024",
+            "source_type": "live_auto",
+            "issue_type": "compliance_check",
+            "score": 70,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-RR-025",
+            "source_type": "replay_real",
+            "issue_type": "routine_review",
+            "score": 53,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-026",
+            "source_type": "live_manual",
+            "issue_type": "technical_decision",
+            "score": 43,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-027",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 77,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-031",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 56,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-032",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 64,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-033",
+            "source_type": "live_manual",
+            "issue_type": "conflict_resolution",
+            "score": 66,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-034",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": 67,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-RR-035",
+            "source_type": "replay_real",
+            "issue_type": "strategic_initiative",
+            "score": 46,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-039",
+            "source_type": "live_manual",
+            "issue_type": "risk_assessment",
+            "score": 58,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-RR-042",
+            "source_type": "replay_real",
+            "issue_type": "routine_review",
+            "score": 76,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-044",
+            "source_type": "live_auto",
+            "issue_type": "risk_assessment",
+            "score": 79,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LA-045",
+            "source_type": "live_auto",
+            "issue_type": "policy_change",
+            "score": 73,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-046",
+            "source_type": "live_manual",
+            "issue_type": "budget_allocation",
+            "score": 48,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-048",
+            "source_type": "live_manual",
+            "issue_type": "strategic_initiative",
+            "score": 37,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-049",
+            "source_type": "live_manual",
+            "issue_type": "resource_planning",
+            "score": 40,
+            "threshold": 80
+          },
+          {
+            "meeting_id": "MTG-LM-050",
+            "source_type": "live_manual",
+            "issue_type": "routine_review",
+            "score": 76,
+            "threshold": 80
+          }
+        ]
+      },
+      "defect_check": {
+        "total_blocks": 14,
+        "by_reason": {
+          "fail": 14
+        },
+        "avg_score_gap": 0.0,
+        "cases": [
+          {
+            "meeting_id": "MTG-LM-004",
+            "source_type": "live_manual",
+            "issue_type": "budget_allocation",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LA-006",
+            "source_type": "live_auto",
+            "issue_type": "routine_review",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LA-007",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LA-008",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LM-009",
+            "source_type": "live_manual",
+            "issue_type": "policy_change",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LA-011",
+            "source_type": "live_auto",
+            "issue_type": "risk_assessment",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-RR-012",
+            "source_type": "replay_real",
+            "issue_type": "resource_planning",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LM-013",
+            "source_type": "live_manual",
+            "issue_type": "compliance_check",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LA-015",
+            "source_type": "live_auto",
+            "issue_type": "strategic_initiative",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LM-016",
+            "source_type": "live_manual",
+            "issue_type": "routine_review",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LM-021",
+            "source_type": "live_manual",
+            "issue_type": "conflict_resolution",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LM-026",
+            "source_type": "live_manual",
+            "issue_type": "technical_decision",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LM-033",
+            "source_type": "live_manual",
+            "issue_type": "conflict_resolution",
+            "score": null,
+            "threshold": null
+          },
+          {
+            "meeting_id": "MTG-LM-048",
+            "source_type": "live_manual",
+            "issue_type": "strategic_initiative",
+            "score": null,
+            "threshold": null
+          }
+        ]
+      }
+    }
+  },
+  "accepted_risk_tracker": [
+    {
+      "case_id": "MTG-LM-001",
+      "observation_id": "OBS-d7d63ac87bff",
+      "old_decision": "approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.9089063075350071,
+      "deliberation_score": 70,
+      "review_score": 78,
+      "source_type": "live_manual",
+      "issue_type": "technical_decision",
+      "risk_level": "medium",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.253224",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LA-003",
+      "observation_id": "OBS-83edbf9afd08",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8772933676331565,
+      "deliberation_score": 74,
+      "review_score": 63,
+      "source_type": "live_auto",
+      "issue_type": "technical_decision",
+      "risk_level": "medium",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.253515",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-004",
+      "observation_id": "OBS-cb62fb31b884",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8070905012216169,
+      "deliberation_score": 61,
+      "review_score": 76,
+      "source_type": "live_manual",
+      "issue_type": "budget_allocation",
+      "risk_level": "high",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.253609",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LA-006",
+      "observation_id": "OBS-18025860c1c0",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8665432324673057,
+      "deliberation_score": 62,
+      "review_score": 75,
+      "source_type": "live_auto",
+      "issue_type": "routine_review",
+      "risk_level": "medium",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.253779",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LA-007",
+      "observation_id": "OBS-d60b7da27330",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8998500989348188,
+      "deliberation_score": 61,
+      "review_score": 54,
+      "source_type": "live_auto",
+      "issue_type": "strategic_initiative",
+      "risk_level": "high",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.253869",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-RR-012",
+      "observation_id": "OBS-9f1c4d1f1a24",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.9024432725060949,
+      "deliberation_score": 71,
+      "review_score": 65,
+      "source_type": "replay_real",
+      "issue_type": "resource_planning",
+      "risk_level": "low",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.254295",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-021",
+      "observation_id": "OBS-53cf43cf6909",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8274139756851309,
+      "deliberation_score": 64,
+      "review_score": 70,
+      "source_type": "live_manual",
+      "issue_type": "conflict_resolution",
+      "risk_level": "medium",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.255001",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-023",
+      "observation_id": "OBS-370ebd47a47d",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.9758533999166146,
+      "deliberation_score": 68,
+      "review_score": 78,
+      "source_type": "live_manual",
+      "issue_type": "technical_decision",
+      "risk_level": "high",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.255163",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LA-024",
+      "observation_id": "OBS-27836ab5ed08",
+      "old_decision": "approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.9228969046477903,
+      "deliberation_score": 62,
+      "review_score": 70,
+      "source_type": "live_auto",
+      "issue_type": "compliance_check",
+      "risk_level": "medium",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.255254",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-027",
+      "observation_id": "OBS-1c63c066dc7c",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.9039650944054671,
+      "deliberation_score": 67,
+      "review_score": 77,
+      "source_type": "live_manual",
+      "issue_type": "compliance_check",
+      "risk_level": "medium",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.255508",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-029",
+      "observation_id": "OBS-260594e0dfb4",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8837750301194948,
+      "deliberation_score": 70,
+      "review_score": 83,
+      "source_type": "live_manual",
+      "issue_type": "compliance_check",
+      "risk_level": "low",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.255682",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-031",
+      "observation_id": "OBS-abc8905f2acf",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8558057103864848,
+      "deliberation_score": 51,
+      "review_score": 56,
+      "source_type": "live_manual",
+      "issue_type": "compliance_check",
+      "risk_level": "high",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.255833",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-032",
+      "observation_id": "OBS-913d48521d93",
+      "old_decision": "approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.9429015860985408,
+      "deliberation_score": 71,
+      "review_score": 64,
+      "source_type": "live_manual",
+      "issue_type": "compliance_check",
+      "risk_level": "low",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.255925",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-034",
+      "observation_id": "OBS-cbf595dd63f2",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8938211237923979,
+      "deliberation_score": 61,
+      "review_score": 67,
+      "source_type": "live_manual",
+      "issue_type": "compliance_check",
+      "risk_level": "high",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.256099",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LA-044",
+      "observation_id": "OBS-e1b2719edf50",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.8638660808922892,
+      "deliberation_score": 65,
+      "review_score": 79,
+      "source_type": "live_auto",
+      "issue_type": "risk_assessment",
+      "risk_level": "high",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.256902",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LA-045",
+      "observation_id": "OBS-84048e98935a",
+      "old_decision": "conditional_approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.9680795170587284,
+      "deliberation_score": 67,
+      "review_score": 73,
+      "source_type": "live_auto",
+      "issue_type": "policy_change",
+      "risk_level": "high",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.256996",
+      "check_due_date": "2026-04-10"
+    },
+    {
+      "case_id": "MTG-LM-050",
+      "observation_id": "OBS-e283008c81ae",
+      "old_decision": "approved",
+      "shadow_decision": "requires_deliberation",
+      "shadow_confidence": 0.895547738562177,
+      "deliberation_score": 74,
+      "review_score": 76,
+      "source_type": "live_manual",
+      "issue_type": "routine_review",
+      "risk_level": "low",
+      "observed_outcome_after_30d": null,
+      "validated_risk": null,
+      "validation_notes": "",
+      "created_at": "2026-03-11T12:00:37.257418",
+      "check_due_date": "2026-04-10"
+    }
+  ],
+  "retune_analysis": {
+    "should_retune": true,
+    "source_concentration": {
+      "live_manual": 0.631578947368421,
+      "live_auto": 0.3157894736842105,
+      "replay_real": 0.05263157894736842
+    },
+    "gate_concentration": {
+      "deliberation_minimum": 0.4146341463414634,
+      "review_minimum": 0.4146341463414634,
+      "defect_check": 0.17073170731707318
+    },
+    "max_source_concentration": 0.631578947368421,
+    "max_gate_concentration": 0.4146341463414634,
+    "reason": "False-blocks are concentrated in specific source/gate stage"
+  }
+}
