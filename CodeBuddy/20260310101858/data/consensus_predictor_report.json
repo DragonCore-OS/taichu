@@ -1,0 +1,19 @@
+{
+  "module": "ConsensusPredictor",
+  "architecture": "4-16-1 MLP",
+  "parameters": 97,
+  "epochs": 200,
+  "learning_rate": 0.1,
+  "initial_accuracy": 0.5325,
+  "final_accuracy": 0.7475,
+  "improvement": 0.21500000000000008,
+  "loss_decrease": 0.21507220396448656,
+  "evidence_standards": {
+    "loss_decreasing": false,
+    "gradient_non_zero": true,
+    "train_better_than_untrained": false,
+    "reload_consistent": true
+  },
+  "model_path": "/home/admin/CodeBuddy/20260310101858/data/consensus_predictor_model.pkl",
+  "status": "FAILED"
+}
