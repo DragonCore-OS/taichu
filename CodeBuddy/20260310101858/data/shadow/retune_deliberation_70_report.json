@@ -1,0 +1,85 @@
+{
+  "experiment_id": "EXP-deliberation_70-20260311-121819",
+  "config": {
+    "name": "deliberation_70",
+    "deliberation_threshold": 70.0,
+    "review_threshold": 80.0,
+    "description": "下调 deliberation 门槛至70"
+  },
+  "metrics": {
+    "total_samples": 50,
+    "decision_alignment_rate": 0.38,
+    "false_block_rate": 0.16,
+    "accepted_risk_count": 7,
+    "source_stats": {
+      "live_manual": {
+        "total": 30,
+        "false_block": 5,
+        "false_block_rate": 0.16666666666666666
+      },
+      "live_auto": {
+        "total": 15,
+        "false_block": 3,
+        "false_block_rate": 0.2
+      },
+      "replay_real": {
+        "total": 5,
+        "false_block": 0,
+        "false_block_rate": 0.0
+      }
+    },
+    "topic_stats": {
+      "technical_decision": {
+        "total": 6,
+        "disagreement": 3,
+        "disagreement_rate": 0.5
+      },
+      "budget_allocation": {
+        "total": 4,
+        "disagreement": 3,
+        "disagreement_rate": 0.75
+      },
+      "contract_review": {
+        "total": 2,
+        "disagreement": 0,
+        "disagreement_rate": 0.0
+      },
+      "routine_review": {
+        "total": 7,
+        "disagreement": 5,
+        "disagreement_rate": 0.7142857142857143
+      },
+      "strategic_initiative": {
+        "total": 6,
+        "disagreement": 6,
+        "disagreement_rate": 1.0
+      },
+      "policy_change": {
+        "total": 6,
+        "disagreement": 2,
+        "disagreement_rate": 0.3333333333333333
+      },
+      "risk_assessment": {
+        "total": 5,
+        "disagreement": 4,
+        "disagreement_rate": 0.8
+      },
+      "resource_planning": {
+        "total": 2,
+        "disagreement": 1,
+        "disagreement_rate": 0.5
+      },
+      "compliance_check": {
+        "total": 9,
+        "disagreement": 5,
+        "disagreement_rate": 0.5555555555555556
+      },
+      "conflict_resolution": {
+        "total": 3,
+        "disagreement": 2,
+        "disagreement_rate": 0.6666666666666666
+      }
+    }
+  },
+  "timestamp": "2026-03-11T12:18:19.676122"
+}

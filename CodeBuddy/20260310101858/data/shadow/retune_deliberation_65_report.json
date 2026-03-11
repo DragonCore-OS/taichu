@@ -1,0 +1,85 @@
+{
+  "experiment_id": "EXP-deliberation_65-20260311-121932",
+  "config": {
+    "name": "deliberation_65",
+    "deliberation_threshold": 65.0,
+    "review_threshold": 80.0,
+    "description": "下调 deliberation 门槛至65"
+  },
+  "metrics": {
+    "total_samples": 50,
+    "decision_alignment_rate": 0.48,
+    "false_block_rate": 0.04,
+    "accepted_risk_count": 1,
+    "source_stats": {
+      "live_manual": {
+        "total": 30,
+        "false_block": 2,
+        "false_block_rate": 0.06666666666666667
+      },
+      "live_auto": {
+        "total": 15,
+        "false_block": 0,
+        "false_block_rate": 0.0
+      },
+      "replay_real": {
+        "total": 5,
+        "false_block": 0,
+        "false_block_rate": 0.0
+      }
+    },
+    "topic_stats": {
+      "technical_decision": {
+        "total": 6,
+        "disagreement": 3,
+        "disagreement_rate": 0.5
+      },
+      "budget_allocation": {
+        "total": 4,
+        "disagreement": 2,
+        "disagreement_rate": 0.5
+      },
+      "contract_review": {
+        "total": 2,
+        "disagreement": 0,
+        "disagreement_rate": 0.0
+      },
+      "routine_review": {
+        "total": 7,
+        "disagreement": 4,
+        "disagreement_rate": 0.5714285714285714
+      },
+      "strategic_initiative": {
+        "total": 6,
+        "disagreement": 5,
+        "disagreement_rate": 0.8333333333333334
+      },
+      "policy_change": {
+        "total": 6,
+        "disagreement": 2,
+        "disagreement_rate": 0.3333333333333333
+      },
+      "risk_assessment": {
+        "total": 5,
+        "disagreement": 4,
+        "disagreement_rate": 0.8
+      },
+      "resource_planning": {
+        "total": 2,
+        "disagreement": 1,
+        "disagreement_rate": 0.5
+      },
+      "compliance_check": {
+        "total": 9,
+        "disagreement": 4,
+        "disagreement_rate": 0.4444444444444444
+      },
+      "conflict_resolution": {
+        "total": 3,
+        "disagreement": 1,
+        "disagreement_rate": 0.3333333333333333
+      }
+    }
+  },
+  "timestamp": "2026-03-11T12:19:32.934891"
+}

@@ -1,0 +1,85 @@
+{
+  "experiment_id": "EXP-both_relaxed-20260311-121924",
+  "config": {
+    "name": "both_relaxed",
+    "deliberation_threshold": 70.0,
+    "review_threshold": 75.0,
+    "description": "同时下调两个门槛"
+  },
+  "metrics": {
+    "total_samples": 50,
+    "decision_alignment_rate": 0.42,
+    "false_block_rate": 0.16,
+    "accepted_risk_count": 7,
+    "source_stats": {
+      "live_manual": {
+        "total": 30,
+        "false_block": 5,
+        "false_block_rate": 0.16666666666666666
+      },
+      "live_auto": {
+        "total": 15,
+        "false_block": 3,
+        "false_block_rate": 0.2
+      },
+      "replay_real": {
+        "total": 5,
+        "false_block": 0,
+        "false_block_rate": 0.0
+      }
+    },
+    "topic_stats": {
+      "technical_decision": {
+        "total": 6,
+        "disagreement": 2,
+        "disagreement_rate": 0.3333333333333333
+      },
+      "budget_allocation": {
+        "total": 4,
+        "disagreement": 3,
+        "disagreement_rate": 0.75
+      },
+      "contract_review": {
+        "total": 2,
+        "disagreement": 0,
+        "disagreement_rate": 0.0
+      },
+      "routine_review": {
+        "total": 7,
+        "disagreement": 4,
+        "disagreement_rate": 0.5714285714285714
+      },
+      "strategic_initiative": {
+        "total": 6,
+        "disagreement": 6,
+        "disagreement_rate": 1.0
+      },
+      "policy_change": {
+        "total": 6,
+        "disagreement": 2,
+        "disagreement_rate": 0.3333333333333333
+      },
+      "risk_assessment": {
+        "total": 5,
+        "disagreement": 3,
+        "disagreement_rate": 0.6
+      },
+      "resource_planning": {
+        "total": 2,
+        "disagreement": 1,
+        "disagreement_rate": 0.5
+      },
+      "compliance_check": {
+        "total": 9,
+        "disagreement": 5,
+        "disagreement_rate": 0.5555555555555556
+      },
+      "conflict_resolution": {
+        "total": 3,
+        "disagreement": 3,
+        "disagreement_rate": 1.0
+      }
+    }
+  },
+  "timestamp": "2026-03-11T12:19:24.872893"
+}

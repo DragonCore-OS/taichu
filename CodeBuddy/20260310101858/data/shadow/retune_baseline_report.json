@@ -1,0 +1,33 @@
+{
+  "experiment_id": "EXP-baseline-20260311-120000",
+  "config": {
+    "name": "baseline",
+    "deliberation_threshold": 75.0,
+    "review_threshold": 80.0,
+    "description": "当前基线配置 (Round 16.2最佳)"
+  },
+  "metrics": {
+    "total_samples": 50,
+    "decision_alignment_rate": 0.24,
+    "false_block_rate": 0.38,
+    "accepted_risk_count": 17,
+    "source_stats": {
+      "live_manual": {
+        "total": 30,
+        "false_block": 12,
+        "false_block_rate": 0.40
+      },
+      "live_auto": {
+        "total": 15,
+        "false_block": 6,
+        "false_block_rate": 0.40
+      },
+      "replay_real": {
+        "total": 5,
+        "false_block": 1,
+        "false_block_rate": 0.20
+      }
+    }
+  },
+  "timestamp": "2026-03-11T12:00:00"
+}
