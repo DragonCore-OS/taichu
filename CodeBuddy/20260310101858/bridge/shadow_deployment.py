@@ -196,10 +196,10 @@ class ShadowMetrics:
 class ShadowDeploymentManager:
     """影子部署管理器"""
     
-    # 最佳配置 (来自 Round 16.2)
+    # 最佳配置 (来自 Round 17.2 - deliberation阈值下调至70)
     DEFAULT_CONFIG = {
-        "deliberation_threshold": 75.0,
-        "review_threshold": 80.0,
+        "deliberation_threshold": 70.0,  # 从75下调：降低误拦率(38%→16%)
+        "review_threshold": 80.0,         # 保持：问题主因不在review
         "max_defects": 1,
         "support_weight": 1.0,
         "oppose_penalty": 1.5,
