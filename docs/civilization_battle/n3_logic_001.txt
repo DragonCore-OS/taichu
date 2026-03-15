@@ -1,0 +1,93 @@
+模型: Nemotron-3-120B
+题目: 囚徒困境变体
+类别: logic
+耗时: 38.4s
+Token: 2048
+======================================================================
+
+We need to propose a strategy for Prisoner's Dilemma variant with random pairings each night, 100 prisoners, no communication, 1000 rounds. Payoffs: Cooperation (both cooperate) => each +3. Defection by one while other cooperates: defector +5, cooperator -2. Both defect => each 0.
+
+Goal: maximize expected total score across all prisoners (or per prisoner?). Likely maximize expected total sum of scores across all participants.
+
+We need to design a strategy each prisoner can follow based on their own history (since no communication, but they can observe outcomes of each encounter? They meet only the other prisoner; they can see the other's action? Usually in PD you know opponent's move after the round. So each prisoner can remember past interactions with each individual they have met? Since random pairing, they may meet same person multiple times over 1000 rounds. They can keep a record per opponent.
+
+We need to propose a strategy, compute expected score, and give mechanisms to respond.
+
+Probably propose a tit-for-tat with forgiveness, or a "win-stay lose-shift" (Pavlov). Since random matching, reputation not directly shared, but each can track partner's behavior.
+
+We can aim for mutual cooperation as much as possible. Since defection yields higher immediate gain (+5 vs +3) but risks retaliation.
+
+We can compute expected payoff under certain strategy assuming others also use same strategy? Since all prisoners are symmetric and using same strategy, we can compute expected payoff per encounter.
+
+If all use Tit-for-Tat (start cooperate, then copy opponent's previous move), starting with cooperation leads to mutual cooperation forever unless a mistake occurs. Since no noise, they'd always cooperate => each gets +3 per encounter. Over 1000 rounds, each prisoner meets on average 1000 * (2/100)?? Wait each round selects random pair among 100 prisoners. Number of encounters per prisoner per round: probability to be selected in a given round = 2/100 = 0.02. Expected number of meetings per prisoner over 1000 rounds = 1000 * 0.02 = 20 encounters. So each prisoner will have about 20 interactions.
+
+If they always cooperate when meeting, each encounter yields +3. So expected total per prisoner = 20 * 3 = 60. Across 100 prisoners total = 6000.
+
+If they sometimes defect, we need to compute expected gain.
+
+Maybe propose a strategy: "Cooperate until you have been defected against twice in a row with same partner, then defect for next encounter, then revert to cooperation if partner cooperates." Something like that.
+
+We need to compute expected score given random matching and strategy.
+
+Simplify: Assume all prisoners follow same strategy S. Then we can model pairwise interaction as a Markov chain based on history of last move between the two.
+
+If S is Tit-for-Tat with initial cooperation, then as long as both start cooperating and no errors, they will always cooperate. So expected payoff per encounter = 3.
+
+Thus expected total score = 100 prisoners * (expected number of meetings per prisoner) * 3 = 100 * 20 * 3 = 6000.
+
+If we consider possibility of mistakes (e.g., random defection with small probability epsilon), we can compute expected payoff with forgiveness.
+
+But the problem likely expects a strategy like "Win-Stay Lose-Shift" (also called Pavlov) which in repeated PD with random matching yields high cooperation.
+
+We need to give: 1. Strategy description, 2. Expected score calculation, 3. Response mechanism (how to react to defection, etc.)
+
+Let's craft answer.
+
+We'll propose: Each prisoner maintains a reputation score for each opponent based on last outcome: if last encounter was mutual cooperation => continue cooperate; if opponent defected while I cooperated => defect next time; if both defected => cooperate next time (to test); if I defected while opponent cooperated => cooperate next time (to revert). This is essentially "Contrite Tit-for-Tat" or "Generous Tit-for-Tat" with probability p of forgiving.
+
+We can compute expected payoff assuming all use same strategy with forgiveness probability f after being exploited.
+
+Let's define: After being exploited (I cooperated, opponent defected), I will defect with probability 1-f next time, else cooperate (forgive). After mutual defection, I will cooperate with probability g (to try to restore cooperation). After mutual cooperation, I cooperate.
+
+Assume symmetric parameters.
+
+We can compute steady-state probabilities of states (CC, CD, DC, DD) where C is my action, D opponent's action? Actually we need joint states.
+
+Simplify: Because strategies are symmetric, we can consider the Markov chain of the pair's joint action: states: CC, CD, DC, DD. Transition probabilities depend on strategy.
+
+If both use same strategy, the chain is symmetric; we can compute stationary distribution and expected payoff per round.
+
+Let's define strategy: After observing outcome o (my payoff), I choose next action based on o:
+
+- If o = +3 (mutual cooperation) => cooperate next.
+- If o = -2 (I cooperated, opponent defected) => cooperate next with probability f (forgive), else defect.
+- If o = +5 (I defected, opponent cooperated) => cooperate next with probability f' (maybe to revert), else defect.
+- If o = 0 (mutual defection) => cooperate next with probability g (to try to rebuild), else defect.
+
+If we set f = f' = p (forgiveness after being exploited or exploiting) and g = q (recovery after mutual defection). For simplicity, choose p = 0.5, q = 0.5.
+
+Then compute transition matrix.
+
+But maybe easier: propose "Win-Stay Lose-Shift": If you got the highest possible payoff (+5) or mutual cooperation (+3) you repeat same action; if you got -2 or 0 you switch.
+
+In PD, highest payoff is +5 (defect while opponent cooperates). So win-stay: if you got +5 (you defected and opponent cooperated) you repeat defect next time; if you got +3 (both cooperated) you repeat cooperate; if you got -2 (you cooperated while opponent defected) you switch; if you got 0 (both defected) you switch.
+
+That yields certain dynamics.
+
+We can compute expected payoff under WSLS with random matching and no noise: Starting with cooperate, if opponent cooperates => both get +3 => both will stay cooperate next time (since they got +3). If opponent defects while I cooperate => I get -2 => I will switch to defect next time; opponent got +5 => they will stay defect next time (since they got +5). So next round: I defect, opponent defects => both get 0 => both will switch (since they got 0) => both cooperate next time. So we get a cycle of length 2: CC -> (CD/DC) -> DD -> CC ... Actually after CD (I cooperated, opponent defected) we go to DD? Wait timeline: Round t: I C, opponent D => payoffs (-2,+5). Next round: I switches to D (since -2), opponent stays D (since +5) => both D => payoffs (0,0). Next round: both switch (since 0) => both C => payoffs (+3,+3). Next round: both stay C (since +3) => repeat. So cycle length 3? Actually sequence: CC -> (C,D) -> DD -> CC -> ... So period 3.
+
+Thus average payoff per round over cycle: (3 + (-2+5)/2? Wait need to compute per prisoner average.
+
+Let's compute per prisoner over the 3-step cycle:
+
+Step1: CC => each gets +3.
+Step2: Suppose I was C, opponent D => I get -2, opponent +5.
+Step3: DD => each gets 0.
+
+So over 3 rounds, my total = 3 + (-2) + 0 = +1. Average per round = +1/3 ≈ 0.333. Opponent's total = 3 + 5 + 0 = +8 => average ≈ 2.667.
+
+But due to symmetry, over many random pairings, each prisoner will be equally likely to be in the role of cooperator or defector in the CD step? Actually the chain is not symmetric because the strategy depends on own payoff; but if both use same WSLS, the joint process is symmetric; the stationary distribution should give equal probability to being in CD vs DC? Let's compute.
+
+We can treat states as unordered pair outcomes: CC, CD (where one cooperated, other defected), DD. Since the labeling of players matters for payoff but we can compute expected payoff per player by symmetry: In CD state, one player gets -2, other gets +5. Over time, each player spends equal time being the cooperator and defector in CD state because the process is symmetric. So expected payoff from CD state per player is average of -2 and +5 = (+3)/2 = 1.5 per occurrence.
+
+Thus we can compute expected payoff per round: Let π_CC, π_CD, π_DD be stationary probabilities of being in each state (unordered). Then expected payoff per player = π_CC * 3 + π_CD * 1.5 + π_DD

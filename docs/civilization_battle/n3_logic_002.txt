@@ -1,0 +1,72 @@
+模型: Nemotron-3-120B
+题目: 三体问题决策
+类别: logic
+耗时: 37.7s
+Token: 2048
+======================================================================
+
+We need to parse the problem: "三体问题决策" (Three-body problem decision). Spaceship must pass through Trisolaris system. Options:
+
+A: Full speed forward (20% death) => 80% survival? Actually says 20% death => 80% survival, immediate? No time cost? Probably immediate passage.
+
+B: Decelerate detour (80% survival, consumes 50 years). So 80% survival after 50-year detour.
+
+C: Wait and observe: each 10 years, accuracy +5%, up to 100 years (so max +50% accuracy). Crew lifespan 80 years.
+
+We need to design optimal strategy maximizing expected survival probability given crew lifespan constraint.
+
+Interpretation: Option C is waiting to improve decision accuracy? Perhaps after waiting, you can then choose A or B with improved success probability? The description: "每10年精度+5%，最多100年". Means each 10 years of waiting improves accuracy by 5% (presumably the probability of making the correct choice? Or improves survival chance of chosen option?). Might be that after waiting t years (multiple of 10 up to 100), you gain +5% per 10 years to the success probability of whichever option you then choose (maybe A or B). Need to interpret.
+
+We have crew lifespan 80 years, so cannot wait beyond 80 years because crew would die of old age before completing mission? Actually if they wait longer than 80, they'd die before finishing. So max wait is 80 years (but option C says up to 100 years; but crew limit reduces to 80). So we can wait up to 80 years, gaining accuracy increments each 10 years: after 0 years wait: base accuracy? Not given. Perhaps base accuracy of choosing best option without waiting is something like 50%? Or maybe the accuracy refers to probability of correctly estimating which option is best? Hmm.
+
+We need to design optimal strategy: maybe we can wait some time, then choose either A or B based on improved info, increasing survival chance.
+
+We need to compute expected survival probability for each possible wait time (0,10,20,...,80) then choose best.
+
+Assume base survival probabilities: Option A: 80% survival (since 20% death). Option B: 80% survival (given). Actually both have same survival 80%? Option B says 80% survival, consumes 50 years. Option A: 20% death => 80% survival immediate. So both have same survival probability but different time costs. Waiting improves accuracy, maybe allowing to choose the better option (maybe one has higher survival than the other after considering time cost vs lifespan). For instance, if you take B, you lose 50 years of crew lifespan, leaving only 30 years left for life after passage? But crew lifespan is 80 years total; if they spend 50 years detouring, they have 30 years left to live after, maybe they need to survive beyond mission? Not clear.
+
+Maybe the goal is to maximize probability of surviving the passage within crew lifespan; waiting consumes time but does not risk death (except aging). Option B consumes 50 years of time, which reduces remaining lifespan for after mission, but if they need to survive after mission maybe they need some minimum remaining lifespan to continue? Not given.
+
+Simplify: We just need to maximize probability of surviving the passage, considering that waiting improves accuracy of choosing between A and B (maybe you can then pick the option with higher survival chance based on updated info). Since both have same base survival 80%, maybe accuracy influences death probability: e.g., after waiting, you can reduce death chance for A or B by some amount.
+
+Alternative interpretation: Option C: waiting improves accuracy of predicting the outcome of the three-body problem, thus increasing chance of success for whichever option you subsequently choose. Each 10 years wait adds 5% to success probability, up to max 100% (i.e., after 100 years wait you are certain). Crew lifespan 80 years limits max wait to 80 years => +40% accuracy (since 80/10*5 = 40%). So you can increase success probability by up to 40% beyond base.
+
+Base success probability maybe 50% (random guess)? Then after waiting you can get up to 90%? Not sure.
+
+Let's assume base success probability of choosing correctly without waiting is 50% (like random). Then after waiting t years (multiple of 10 up to 80), success probability = 0.5 + 0.05*(t/10) = 0.5 + 0.005t? Actually 5% per 10 years = 0.05 per decade. So after t years, added = 0.05*(t/10) = 0.005t? Wait 0.05 per 10 years => 0.005 per year. So after 80 years, added = 0.005*80 = 0.4 => total 0.9 (90%). That seems plausible.
+
+Thus you can wait to increase chance of picking the correct option (which yields survival). If you pick wrong option, maybe you die? Not sure.
+
+Alternatively, maybe each option has a base survival probability: A: 80% (immediate), B: 80% but costs 50 years. Waiting improves accuracy of predicting which option is better given time cost vs lifespan. For instance, if you have limited lifespan, taking B may cause you to die of old age before finishing mission? Actually if you spend 50 years detouring, you have only 30 years left to live; maybe after passage you need to survive some minimum time to reach destination? Not given.
+
+Given ambiguity, we need to propose a reasonable strategy: compute expected survival for each wait time then choose.
+
+Assume that after waiting t years, you can choose either A or B with known survival probabilities (maybe A: 80% immediate, B: 80% but you lose t years? Actually B always costs 50 years regardless of wait). Waiting does not affect survival probabilities but consumes time; crew lifespan limit means total time spent (wait + travel) must be <=80 years to avoid dying of old age before mission ends. So we need to ensure wait + (time cost of chosen option) <=80.
+
+Option A time cost = 0 (immediate). Option B time cost = 50 years.
+
+Thus if we wait t years then choose A, total time = t <=80 => feasible for t up to 80. If we wait t then choose B, total time = t+50 <=80 => t <=30. So waiting more than 30 years then choosing B would exceed lifespan.
+
+Thus we need to maximize expected survival = (accuracy after waiting) * survival probability of chosen option? Or maybe accuracy directly modifies survival probability: e.g., after waiting, you can predict outcome with certain accuracy, and if you are correct you survive, else you die. So survival probability = accuracy.
+
+Thus we want to maximize accuracy subject to time constraints.
+
+Accuracy after waiting t years = base accuracy + 0.05*(t/10). Base accuracy maybe 0%? Not given. Could be 0% (no info) then each decade adds 5% up to 50% at 100 years. But crew limit 80 => max 40% accuracy. That seems low.
+
+Alternatively base accuracy could be 50% (random guess) as earlier.
+
+Let's assume base accuracy = 0% (i.e., without info you cannot guarantee survival). Then waiting improves chance of success linearly. Then we want to wait as much as possible within constraints to maximize accuracy, but also need to choose an option that fits time.
+
+If we wait t then choose A (0 extra time), total time = t <=80 => max t=80 => accuracy = 0.05*(80/10)=0.05*8=0.4 => 40% survival.
+
+If we wait t then choose B, total time = t+50 <=80 => t <=30 => max t=30 => accuracy = 0.05*(30/10)=0.05*3=0.15 => 15% survival.
+
+Thus best is wait 80 years then take A, giving 40% survival.
+
+But maybe we can also consider not waiting at all and taking A immediate: accuracy base? If base accuracy maybe 50% (random), then immediate A gives 50% survival (since you guess correctly half the time). Waiting improves that.
+
+Thus we need to define base accuracy. Let's assume base accuracy = 50% (i.e., without info you have 50% chance to pick the right option). Then waiting adds 5% per decade up to +50% at 100 years (max 100%). So accuracy = 0.5 + 0.05*(t/10). Then after waiting t years and choosing either A or B (both have same outcome if correct), survival = accuracy.
+
+Now compute:
+
+If wait t then A: total time = t <=80 => max t=80 => accuracy = 0.5 + 0.05*8 =

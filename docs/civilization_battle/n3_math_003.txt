@@ -1,0 +1,131 @@
+模型: Nemotron-3-120B
+题目: 图论网络流
+类别: math
+耗时: 37.7s
+Token: 2048
+======================================================================
+
+We need to answer in Chinese likely. Provide LP formulation, proof of max-flow min-cut, design approximation algorithm for k edge failures with backup paths achieving approximation ratio ≤2, and compute complexity. Provide details. Ensure clarity.
+
+Let's craft answer: sections 1-4. Provide LP variables: flow on each edge, cost, source to factories, factories to retailers, retailers to sink maybe. Supply/demand constraints. Then max-flow min-cut proof: standard via dual of max flow LP. Provide reasoning.
+
+Third: design algorithm: find k-edge fault-tolerant flow? Need backup paths: perhaps compute min-cost flow of capacity (k+1) on each edge? Or compute edge-disjoint paths? Approximation ratio ≤2: Use primal-dual or compute min-cost flow then augment with shortest augmenting paths for each unit of flow after failures. Provide algorithm: compute min-cost max-flow for original network (value F). Then for each unit of flow, compute two edge-disjoint paths using Suurballe's algorithm to get backup; total cost ≤2*optimal. Provide explanation.
+
+Complexity: O(VE log V) for successive shortest augmenting path, plus O(k * (V+E) log V) for backup.
+
+Let's craft final answer.
+
+</think>
+
+**供应链网络（1000 节点，10 工厂 → 50 零售商）**  
+下面依次给出四个子题的完整回答：  
+
+---
+
+## 1. 最小费用最大流（MCMF）线性规划模型  
+
+### 网络描述  
+
+* 集合  
+  * \(V\) – 所有节点，\(|V|=1000\)（包含超级源 \(s\)、超级汇 \(t\)、10 个工厂节点 \(F=\{f_1,\dots,f_{10}\}\)、50 个零售商节点 \(R=\{r_1,\dots,r_{50}\}\) 以及中转/仓库节点）。  
+  * \(E\) – 有向弧，每条弧 \(e=(u,v)\) 有 **容量** \(c_e\ge 0\) 与 **单位费用** \(w_e\ge 0\)。  
+
+* 供给 / 需求  
+  * 每个工厂 \(f_i\) 有固定产能（供给）\(s_i\ge 0\)。  
+  * 每个零售商 \(r_j\) 有固定需求（需求）\(d_j\ge 0\)。  
+  * 为把问题转化为纯 **最大流** 形式，我们在超级源 \(s\) 与每个工厂之间加入弧 \((s,f_i)\)，容量 \(=s_i\)，费用 \(=0\)；在每个零售商与超级汇 \(t\) 之间加入弧 \((r_j,t)\)，容量 \(=d_j\)，费用 \(=0\)。  
+
+### 决策变量  
+
+* \(x_e\) – 在弧 \(e\) 上实际发送的流量（实数，≥0）。  
+
+### 线性规划  
+
+\[
+\begin{aligned}
+\min \quad & \sum_{e\in E} w_e \, x_e \\[4pt]
+\text{s.t.}\quad &
+\underbrace{\sum_{e\in\delta^{+}(v)} x_e - \sum_{e\in\delta^{-}(v)} x_e}_{ \text{净流出}} =
+\begin{cases}
+\displaystyle \sum_{i=1}^{10}s_i & v = s \\[4pt]
+-\displaystyle\sum_{j=1}^{50} d_j & v = t \\[4pt]
+0 & v\in V\setminus\{s,t\}
+\end{cases}
+&&\forall v\in V \\[6pt]
+& 0 \le x_e \le c_e &&\forall e\in E
+\end{aligned}
+\]
+
+* 第一个约束是 **流平衡**（节点守恒），源点的净流出等于总供给，汇点的净流入等于总需求，中间节点净流为零。  
+* 第二个约束是 **容量约束**。  
+
+该 LP 的最优解即为 **最小费用最大流**：在满足所有供给‑需求的前提下，总费用最小；若总供给 > 总需求，则在满足所有需求后仍可把多余流量送回源点（费用为0），于是流量值等于 \(\min\{\sum s_i,\sum d_j\}\)——即 **最大可能流量**。
+
+---
+
+## 2. Max‑Flow Min‑Cut 定理的证明（基于对偶 LP）
+
+### 原始最大流 LP（不考虑费用）  
+
+\[
+\begin{aligned}
+\max \quad & \sum_{e\in\delta^{+}(s)} x_e \\[2pt]
+\text{s.t.}\quad &
+\sum_{e\in\delta^{+}(v)} x_e - \sum_{e\in\delta^{-}(v)} x_e = 0 &&\forall v\in V\setminus\{s,t\}\\
+& 0 \le x_e \le c_e &&\forall e\in E
+\end{aligned}
+\]
+
+目标是从 \(s\) 向 \(t\) 送尽可能多的流量。
+
+### 对偶 LP  
+
+引入节点势变量 \(y_v\)（对应流平衡约束）和弧上容量对偶变量 \(z_e\ge0\)（对应上界约束）：
+
+\[
+\begin{aligned}
+\min \quad & \sum_{e\in E} c_e \, z_e \\[2pt]
+\text{s.t.}\quad &
+y_u - y_v + z_e \ge 0 &&\forall e=(u,v)\in E\\
+& y_s - y_t \ge 1\\
+& z_e \ge 0 &&\forall e\in E
+\end{aligned}
+\]
+
+* 将不等式写成标准形式后，可发现：  
+  * 令 \(S=\{v\mid y_v \ge y_s\}\)，则 \(t\notin S\) 因为 \(y_s-y_t\ge1\Rightarrow y_t<y_s\)。  
+  * 对于任何跨越 cut \((S,V\!\setminus\!S)\) 的弧 \(e=(u,v)\)（即 \(u\in S, v\notin S\)），约束 \(y_u-y_v+z_e\ge0\) 蕴含 \(z_e \ge y_v-y_u >0\)。  
+  * 对于完全在 \(S\) 内或完全在 \(S\) 外的弧，可取 \(z_e=0\)。  
+
+于是对偶目标变为  
+
+\[
+\sum_{e\in\delta^{+}(S)} c_e \, z_e \ge \sum_{e\in\delta^{+}(S)} c_e \cdot (y_v-y_u) .
+\]
+
+因为在最优对偶解中，我们可以把所有跨越 cut 的 \(z_e\) 取为恰好使不等式紧致的值，即 \(z_e = y_v-y_u\)（正数），而其余弧的 \(z_e=0\)。于是对偶目标恰好等于 **cut 的容量**：
+
+\[
+\text{对偶目标}= \sum_{e\in\delta^{+}(S)} c_e .
+\]
+
+对偶约束 \(y_s-y_t\ge1\) 保证了 \(s\in S, t\notin S\)；因此任意可行对偶解对应一个 **s‑t 割**，且其目标值正是该割的容量。  
+
+由弱对偶性可知：任意可行流的值 ≤ 任意 s‑t 割的容量；由强对偶性（LP 在此情况下是有限且严格可行的）可知存在最优 primal‑dual 对，此时等号成立：
+
+\[
+\boxed{\text{最大流值} = \text{最小 s‑t 剩余容量（最小割）}} .
+\]
+
+这就是 **Max‑Flow Min‑Cut 定理** 的线性规划证明。
+
+---
+
+## 3. k 条边可能中断——近似比 ≤ 2 的备用路径算法  
+
+### 问题描述  
+
+* 原网络 \(G=(V,E)\) 已知每条弧的容量 \(c_e\) 和费用 \(w_e\)。  
+* 最多有 **k** 条弧可能同时失效（不可预知哪些）。  
+* 我们需要在 **故障前** 预先规划一组 **主路径** 和 **备用路径**（对每个工厂‑零售商对），使得在任意最多 k 条边失效的情况下，仍能够把所有需求送达（即流量不下降）。  
+* 目标：最小化所用路径的总费用
