@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in post-quantum cryptography, lattice-based cryptography, and blockchain systems. Provide rigorous security proofs, concrete implementations, and working Python prototypes."
+    },
+    {
+      "role": "user",
+      "content": "【原创-4】密码学前沿：后量子签名聚合\n\n设计一个后量子安全的签名聚合方案，用于区块链状态验证。要求：\n- 基础：基于格(Lattice)的短签名方案（如 Dilithium 变体）\n- 聚合：n个签名聚合成1个，验证时间从O(n)降到O(log n)或O(1)\n- 安全：抵抗量子计算的格归约攻击（BKZ算法）\n\n具体要求：\n1. 选择或设计基础签名方案（可以基于MLWE或MSIS问题）\n2. 设计聚合机制（可以使用Merkle树、递归证明或同态性质）\n3. 给出安全性证明（EU-CMA安全，抵抗伪造）\n4. 分析聚合后的签名大小和验证时间\n5. 实现Python原型（可以使用numpy，不必须用格库）\n\n参数要求：\n- 128位量子安全级别（n=512或更高维度）\n- 单个签名大小 ≤ 5KB\n- 聚合1000个签名后，总大小 ≤ 10KB\n- 验证1000个聚合签名时间 ≤ 100ms\n\n请给出完整解答，包含方案设计、安全性证明、Python实现和性能分析。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in computational biology, machine learning, and bioinformatics. Provide rigorous ML models, feature engineering solutions, and working Python implementations with model interpretability."
+    },
+    {
+      "role": "user",
+      "content": "【原创-7】计算生物学：CRISPR脱靶效应预测模型\n\n设计一个机器学习模型，预测CRISPR-Cas9 guide RNA的脱靶效应。\n\n生物学背景：\n- Guide RNA (gRNA) 20nt序列，与目标DNA匹配\n- 脱靶：gRNA与非目标DNA序列结合，导致非预期编辑\n- 脱靶风险取决于：序列相似性、DNA可及性(chromatin accessibility)、PAM序列\n\n数据：\n- 提供10,000条已知gRNA的脱靶实验数据（模拟生成，但有真实生物学约束）\n- 特征：gRNA序列、目标基因功能、细胞类型、染色质状态\n\n要求：\n1. 设计特征工程方案（序列编码、物理化学性质）\n2. 选择或设计模型架构（CNN、Transformer、或图神经网络）\n3. 处理类别不平衡（脱靶事件稀有，<1%）\n4. 评估指标：精确率-召回率曲线、AUPRC（比AUROC更适合稀有事件）\n5. 解释模型预测（SHAP或注意力机制）\n6. 讨论模型在临床应用中的局限性和伦理考量\n\n请给出完整解答，包含ML设计、Python实现、模型解释和伦理分析。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in AI safety, reinforcement learning, and formal verification. Provide rigorous formal frameworks, concrete detection algorithms, and working Python implementations."
+    },
+    {
+      "role": "user",
+      "content": "【原创-6】AI对齐：奖励黑客的形式化检测\n\n设计一个自动检测奖励黑客(reward hacking)的形式化方法。\n\n场景：\n- RL智能体在模拟环境中学习\n- 奖励函数R(s,a)设计有缺陷，可能导致非预期行为\n- 智能体可能发现\"捷径\"：在满足R的同时违背设计者意图I\n\n形式化定义：\n- 状态空间S，动作空间A，转移函数P(s'|s,a)\n- 意图I：设计者希望智能体最大化的隐式目标（难以直接编码）\n- 奖励R：显式编码的代理目标\n- 奖励黑客：存在策略π，使得E[R]高但E[I]低\n\n要求：\n1. 建立形式化框架，定义\"意图违背\"的可检测条件\n2. 设计静态分析方法，检测R与I的潜在不一致\n3. 给出具体案例：Atari游戏、机器人控制、推荐系统中的奖励黑客\n4. 实现Python原型，展示检测能力\n5. 分析检测方法的完备性和可靠性（哪些黑客行为无法被检测）\n\n请给出完整解答，包含形式化框架、检测算法、Python实现和案例分析。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

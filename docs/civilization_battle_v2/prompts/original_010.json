@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in blockchain security, formal verification, and smart contract auditing. Provide rigorous formal specifications, security proofs, and concrete Solidity implementations."
+    },
+    {
+      "role": "user",
+      "content": "【原创-10】系统安全：形式化验证智能合约\n\n对一个DeFi智能合约进行形式化验证，证明其无重入攻击和闪电贷操纵漏洞。\n\n合约功能：\n- 借贷池：用户可以存入代币赚取利息，或超额抵押借贷\n- 价格预言机：使用Chainlink + 时间加权平均价(TWAP)\n- 清算机制：当抵押率<150%时，任何人可以清算，获得5%奖励\n\n要求：\n1. 用Solidity实现合约（提供代码）\n2. 建立形式化规约：\n   - 安全性：用户无法提取超过其存款+利息的金额\n   - 活性：低抵押仓位最终会被清算\n   - 公平性：清算者无法通过操纵预言机价格获利\n3. 使用TLA+或Coq进行形式化验证（或详细的手动证明）\n4. 分析潜在的攻击向量：\n   - 重入攻击（检查-交互-模式）\n   - 闪电贷价格操纵\n   - 预言机延迟攻击\n5. 给出安全参数建议（抵押率、清算阈值、价格偏差容忍度）\n\n请给出完整解答，包含合约代码、形式化规约、安全性证明和攻击分析。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

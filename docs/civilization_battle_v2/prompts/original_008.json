@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in multi-agent systems, game theory, and complex systems simulation. Provide rigorous agent-based models, emergent behavior analysis, and working Python simulations with visualization."
+    },
+    {
+      "role": "user",
+      "content": "【原创-8】文明模拟：多智能体社会契约涌现\n\n设计一个多智能体仿真，研究\"社会契约\"如何从自私的个体中涌现。\n\n设定：\n- 100个智能体，在一个有稀缺资源（食物、土地）的2D网格世界\n- 每个智能体有：饥饿度、生命值、资源存量\n- 行动选择：采集、交易、战斗、结盟、偷窃\n\n博弈结构：\n- 囚徒困境：合作采集 vs 独自采集（合作效率高但有被背叛风险）\n- 公地悲剧：共享牧场 vs 过度放牧\n- 社会契约：智能体可以制定规则（惩罚偷窃者），但需要付出执法成本\n\n要求：\n1. 设计多智能体强化学习框架\n2. 实现社会契约的涌现机制（规则提议、投票、执行）\n3. 模拟不同初始条件下的社会演化：\n   - 高资源丰度 vs 低资源丰度\n   - 高惩罚成本 vs 低惩罚成本\n   - 异质智能体（不同策略倾向）\n4. 分析：在什么条件下合作稳定涌现？什么条件下社会崩溃？\n5. 可视化：种群策略演化、资源分布、社会网络结构\n\n请给出完整解答，包含MAS设计、Python实现、结果分析和可视化。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

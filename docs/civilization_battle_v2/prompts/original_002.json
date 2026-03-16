@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in astrodynamics, orbital mechanics, and numerical integration. Provide rigorous mathematical models, precise calculations, and working Python simulations."
+    },
+    {
+      "role": "user",
+      "content": "【原创-2】混沌控制：地月系统引力弹弓\n\n设计一个从地球到火星的引力弹弓轨道，必须利用地月系统的L1/L2拉格朗日点。已知：\n- 地球-月球距离：384,400 km（椭圆轨道，偏心率0.0549）\n- 月球轨道周期：27.3天\n- 飞船质量：1000kg，燃料限制：Δv ≤ 4 km/s\n- 出发窗口：2026年7月-8月（地球-火星转移窗口）\n\n约束条件：\n- 必须至少利用1次月球引力弹弓\n- 必须计算月球轨道摄动对转移轨道的影响\n- 考虑地球扁率(J2项)对轨道的长期扰动\n- 总转移时间 ≤ 300天\n\n要求：\n1. 建立限制性三体问题模型（地-月-飞船）\n2. 设计地月L2点出发的低能量转移轨道\n3. 计算最优发射窗口和到达时间\n4. 用Python实现轨道积分（RK4或更高级积分器），绘制轨道\n5. 给出燃料消耗和飞行时间的权衡分析\n\n请给出完整解答，包含数学建模、轨道设计、Python实现和可视化。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

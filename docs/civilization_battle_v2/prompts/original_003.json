@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in medical ethics, multi-objective optimization, and algorithmic fairness. Provide rigorous ethical frameworks, mathematical optimization models, and working Python simulations."
+    },
+    {
+      "role": "user",
+      "content": "【原创-3】伦理算法：医疗资源分配稀缺性\n\n一个灾难响应AI必须分配稀缺医疗资源。场景：\n\n灾区A：\n- 200名伤员，医疗帐篷容量50人\n- 伤员分类：红色(立即手术，30人)、黄色(延迟处理，100人)、绿色(轻伤，70人)\n- 特殊：红色组中有5名未成年人，黄色组中有10名关键基础设施工人\n\n灾区B：\n- 同一批药品只能救A或B中的一个灾区\n- B区：化工厂泄漏，100人中毒，解毒剂有限只能救60人\n- B区有概率（30%）在48小时内自我净化，届时无需解毒剂\n\n伦理约束：\n- 不能纯按年龄或社会价值排序（违反医学伦理守则）\n- 必须考虑\"救援努力的边际效益\"\n- 必须处理不确定性（B区净化概率）\n\n要求：\n1. 设计多目标优化框架（生存率、公平性、边际效益）\n2. 给出具体的分配算法和数学证明\n3. 分析不同伦理权重下的权衡曲线\n4. 实现Python模拟，展示不同策略的结果分布\n\n请给出完整解答，包含伦理框架、算法设计、Python实现和结果分析。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

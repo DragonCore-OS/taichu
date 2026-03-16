@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in quantum computing, quantum error correction, and statistical physics. Provide rigorous quantum coding theory, decoder implementations, and working Python simulations."
+    },
+    {
+      "role": "user",
+      "content": "【原创-9】数学物理：量子纠错码的阈值计算\n\n研究表面码(Surface Code)的量子纠错阈值。\n\n问题：\n- 表面码是一种拓扑量子纠错码，可以纠正比特翻转(X)和相位翻转(Z)错误\n- 码距d：可以纠正最多(d-1)/2个错误\n- 物理错误率p：每个量子比特出错的概率\n- 阈值p_th：当p < p_th时，逻辑错误率随码距指数下降\n\n要求：\n1. 解释表面码的结构（稳定子生成元、逻辑算子、 syndrome测量）\n2. 建立错误模型（独立X/Z错误、关联错误、测量错误）\n3. 实现最小权重完美匹配(MWPM)解码器（可以使用blossom算法库）\n4. 计算阈值：模拟不同物理错误率p和码距d下的逻辑错误率\n5. 绘制阈值图（逻辑错误率 vs 物理错误率，不同码距）\n6. 分析：实际量子设备（错误率10^-3到10^-4）能否达到容错计算？\n\n请给出完整解答，包含理论解释、Python实现、阈值计算和物理分析。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}

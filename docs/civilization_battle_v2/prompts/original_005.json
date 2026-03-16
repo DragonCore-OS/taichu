@@ -1,0 +1,15 @@
+{
+  "model": "PLACEHOLDER",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert in distributed systems theory, Byzantine fault tolerance, and formal methods. Provide rigorous mathematical proofs, impossibility results, and formal protocol specifications."
+    },
+    {
+      "role": "user",
+      "content": "【原创-5】分布式系统：异步BFT共识的下界证明\n\n在异步网络中，研究拜占庭容错(BFT)共识的不可能性和下界。\n\n问题陈述：\n- n个节点，其中f个拜占庭节点\n- 网络是异步的（消息延迟无界但有限）\n- 证明或反驳：在异步网络中，确定性BFT共识需要n ≥ 3f+1\n- 进一步：如果允许概率性终止（probabilistic termination），下界是否改变？\n\n要求：\n1. 形式化定义异步BFT共识（安全性、活性、拜占庭容错）\n2. 证明FLP不可能性在BFT场景下的扩展\n3. 分析n = 2f+1时为何不可能（构造攻击场景）\n4. 设计一个满足n ≥ 3f+1的异步BFT协议（可以基于PBFT或HotStuff变体）\n5. 给出活性证明（在部分同步假设下）\n\n请给出完整解答，包含形式化定义、不可能性证明、协议设计和安全性分析。"
+    }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.3
+}
