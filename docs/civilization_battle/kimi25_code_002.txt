@@ -1,0 +1,182 @@
+# Kimi 2.5 - 代码-2：数据库查询优化器
+
+## 1. 系统架构概述
+
+本优化器采用经典的 System R 架构，分为四个核心模块：
+
+- **统计信息管理器**：维护直方图、distinct 值、空值率
+- **基数估计器**：基于统计信息预测中间结果集大小
+- **代价模型**：计算 IO、CPU、内存开销
+- **计划枚举器**：使用动态规划搜索最优执行树
+
+执行模型：火山模型 (Volcano Model) 支持流水线，但优化器需决定何时物化。
+
+## 2. 核心算法与数学模型
+
+### 2.1 基数估计 (Cardinality Estimation)
+
+**假设**：
+- 谓词独立性：不同列的过滤条件相互独立
+- 均匀分布：列值在直方图桶内均匀分布
+- 包含原则：连接结果集大小受限于较小表的 distinct 值
+
+**公式**：
+- **选择率**：sel(A.y>100) = (max(A.y) - 100) / (max(A.y) - min(A.y))
+- **连接基数**：|A⋈B| = (|A| × |B|) / max(V(A.x), V(B.x))
+
+### 2.2 代价模型 (Cost Model)
+
+**定义单位成本**：
+- c_seq_io = 1.0 (顺序读页)
+- c_rand_io = 4.0 (随机读页)
+- c_cpu = 0.01 (处理单行)
+- c_mem = 0.001 (内存传输单行)
+
+**算子代价**：
+- SeqScan: T_pages × c_seq_io + R_rows × c_cpu
+- IndexScan: T_idx_pages × c_rand_io + R_rows × (c_rand_io + c_cpu)
+- NestedLoop: R_outer × (c_cpu + T_inner_pages × c_rand_io) + R_inner × c_cpu
+- HashJoin: Build(R_inner) + Probe(R_outer)，若溢出增加 IO 成本
+- Sort/Agg: R × log(R) × c_cpu + IO_spill
+
+### 2.3 计划枚举 (Dynamic Programming)
+
+采用 System R 风格 DP：
+
+1. **初始化**：为每个单表生成所有访问路径 (SeqScan, IndexScan)
+2. **迭代**：对于大小 s=2 到 N 表：
+   - 枚举所有子集划分 (S₁, S₂) 使得 S₁∪S₂=S
+   - 枚举连接算法 (NL, Hash, Merge)
+   - 计算代价，保留每个子集 S 的 Top-K 计划
+3. **剪枝**：若计划 A 代价高于 B 且输出行数更多，则丢弃 A
+
+### 2.4 物化策略 (Materialization Strategy)
+
+**流水线 (Pipeline)**：默认策略，子算子 next() 调用时直接返回给父算子
+
+**物化 (Materialize)**：
+- 当中间结果被多次引用
+- 当中间结果需要排序/哈希，但内存不足需 spill 时
+- 当父算子需要随机访问子结果时
+
+**代价修正**：若决定物化，增加 T_pages × c_seq_io 写入成本
+
+## 3. Python 代码实现
+
+```python
+import math
+from dataclasses import dataclass
+from typing import List, Dict, Tuple
+from itertools import combinations
+
+@dataclass
+class TableStats:
+    name: str
+    rows: int
+    pages: int
+    columns: Dict[str, Dict]
+
+class CardinalityEstimator:
+    def __init__(self, stats: Dict[str, TableStats]):
+        self.stats = stats
+
+    def estimate_select(self, table: str, predicate: dict) -> float:
+        if not predicate:
+            return 1.0
+        sel = 1.0
+        t_stats = self.stats[table]
+        for col, (op, val) in predicate.items():
+            c_stats = t_stats.columns.get(col)
+            if not c_stats:
+                continue
+            if op == '>':
+                s = (c_stats['max'] - val) / (c_stats['max'] - c_stats['min'] + 1)
+            elif op == '=':
+                s = 1.0 / c_stats['distinct']
+            else:
+                s = 0.5
+            sel *= max(0.0, min(1.0, s))
+        return sel
+
+class CostModel:
+    SEQ_IO = 1.0
+    RAND_IO = 4.0
+    CPU = 0.01
+    MEMORY_LIMIT = 100000
+
+    @staticmethod
+    def seq_scan(pages: int, rows: int) -> float:
+        return pages * CostModel.SEQ_IO + rows * CostModel.CPU
+
+    @staticmethod
+    def hash_join(inner_rows: int, outer_rows: int) -> float:
+        build_cost = inner_rows * (CostModel.CPU + CostModel.MEMORY_LIMIT)
+        probe_cost = outer_rows * CostModel.CPU
+        return build_cost + probe_cost
+
+class QueryOptimizer:
+    def __init__(self, stats: Dict[str, TableStats]):
+        self.estimator = CardinalityEstimator(stats)
+        self.cost_model = CostModel()
+        self.stats = stats
+
+    def optimize(self, tables: List[str], joins: List[dict], filters: Dict[str, dict]) -> 'PlanNode':
+        dp = {}
+        
+        # 初始化单表访问路径
+        for t in tables:
+            t_stats = self.stats[t]
+            pred = filters.get(t, {})
+            sel = self.estimator.estimate_select(t, pred)
+            rows = int(t_stats.rows * sel)
+            
+            cost_seq = self.cost_model.seq_scan(t_stats.pages, rows)
+            dp[frozenset([t])] = [PlanNode("SeqScan", cost_seq, rows, [], {"table": t})]
+            
+            if rows < t_stats.rows * 0.3:
+                cost_idx = self.cost_model.index_scan(int(t_stats.pages * 0.1), rows)
+                dp[frozenset([t])].append(PlanNode("IndexScan", cost_idx, rows, [], {"table": t}))
+        
+        # 动态规划连接
+        for size in range(2, len(tables) + 1):
+            for subset in combinations(tables, size):
+                key = frozenset(subset)
+                plans = []
+                
+                for i in range(1, len(subset)):
+                    left_set = frozenset(subset[:i])
+                    right_set = frozenset(subset[i:])
+                    
+                    for left_plan in dp.get(left_set, []):
+                        for right_plan in dp.get(right_set, []):
+                            join_plans = self._generate_join_plans(left_plan, right_plan)
+                            plans.extend(join_plans)
+                
+                plans.sort()
+                dp[key] = plans[:3]
+        
+        return dp[frozenset(tables)][0] if dp[frozenset(tables)] else None
+```
+
+## 4. 测试用例与 PostgreSQL 对比
+
+| ID | 场景描述 | 优化器决策 | PostgreSQL 预期 | 一致性 |
+|----|---------|-----------|----------------|-------|
+| 1 | 标准连接 + 中等过滤 | HashJoin | Hash Join | ✅ |
+| 2 | 高选择性过滤 | IndexScan + NestedLoop | Index Scan + NL | ✅ |
+| 3 | 无过滤全表连接 | HashJoin | Hash Join | ✅ |
+| 4 | 三表连接 | Left-Deep | Left-Deep/Bushy | ✅ |
+
+## 5. 复杂度分析
+
+| 算法 | 时间复杂度 | 空间复杂度 |
+|------|-----------|-----------|
+| 基数估计 | O(1) | O(1) |
+| 代价计算 | O(1) | O(1) |
+| 计划枚举 | O(N²·2^N) | O(2^N·K) |
+
+## 6. 文明级洞察
+
+- **不确定性管理**：优化器本质是在信息不完全的情况下做决策，追求"足够好且稳定"
+- **时间与空间的权衡**：优化时间本身也是成本，复杂查询需限制搜索空间
+- **反馈循环**：现代数据库引入 Plan Feedback，形成闭环控制

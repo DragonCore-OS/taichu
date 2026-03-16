@@ -1,0 +1,179 @@
+# DeepSeek 3.2 - 代码-2：数据库查询优化器
+
+## 系统架构
+
+查询优化器接收SQL查询，经过解析、逻辑计划生成、基于代价的物理计划搜索，最终输出执行计划。
+
+**核心组件**：
+- 统计信息管理器（直方图）
+- 代价模型（IO + CPU + Memory）
+- 计划枚举器（动态规划）
+- 物化决策模块
+
+## 1. 基数估计
+
+### 统计信息维护
+
+```python
+class StatisticManager:
+    def __init__(self):
+        self.table_stats = {}  # table_name -> (ntuples, nblocks)
+        self.column_stats = {}  # (table, col) -> (ndistinct, min, max, histogram)
+    
+    def estimate_selectivity(self, table, condition):
+        # 范围条件 A.y > 100
+        # 使用直方图定位值100所在桶
+        # 假设桶内均匀分布，计算 >100 的比例
+        pass
+```
+
+### 选择率估计
+
+- **范围条件**：`A.y > 100`
+  - 使用直方图定位桶
+  - 桶内比例 = (high - 100) / (high - low) × freq
+  
+- **等值条件**：`A.x = B.x`
+  - 选择率 = 1 / max(ndistinct(A.x), ndistinct(B.x))
+
+- **多条件**：假设独立性，选择率相乘
+
+## 2. 代价模型
+
+### 基本代价因子
+
+```python
+class CostModel:
+    def __init__(self):
+        self.seq_page_cost = 1.0
+        self.random_page_cost = 4.0
+        self.cpu_tuple_cost = 0.01
+        self.cpu_index_tuple_cost = 0.005
+        self.cpu_operator_cost = 0.0025
+```
+
+### 各操作代价
+
+**SeqScan**：
+```
+Cost = pages × seq_page_cost + rows × cpu_tuple_cost
+```
+
+**IndexScan**：
+```
+Cost = index_pages × random_page_cost + rows × (random_page_cost + cpu_tuple_cost)
+```
+
+**NestedLoopJoin**：
+```
+Cost = N_outer × cost_inner + N_outer × N_inner × cpu_operator_cost
+```
+
+**HashJoin**（假设内存足够）：
+```
+Cost = cost_left + cost_right + (|left| + |right|) × cpu_operator_cost
+```
+
+**Sort**：
+```
+Cost = 2 × data_size × seq_page_cost + rows × log(rows) × cpu_operator_cost
+```
+
+## 3. 计划枚举（动态规划）
+
+```python
+class Optimizer:
+    def optimize(self, query):
+        tables = list(query.tables)
+        best = {}  # subset -> PlanNode
+        
+        # 初始化单表
+        for table in tables:
+            plan = self.create_scan_plan(table, query.conditions.get(table))
+            best[frozenset([table])] = plan
+        
+        # 动态规划枚举连接
+        for size in range(2, len(tables) + 1):
+            for subset in combinations(tables, size):
+                key = frozenset(subset)
+                best_plan = None
+                
+                # 枚举所有分割
+                for left in proper_subsets(subset):
+                    right = subset - left
+                    left_plan = best[frozenset(left)]
+                    right_plan = best[frozenset(right)]
+                    
+                    # 尝试不同连接方法
+                    for method in ['nested_loop', 'hash', 'merge']:
+                        if self.can_apply(method, left_plan, right_plan):
+                            cost = self.cost_model.join_cost(method, left_plan, right_plan)
+                            if best_plan is None or cost < best_plan.cost:
+                                best_plan = JoinNode(left_plan, right_plan, method, cost)
+                
+                best[key] = best_plan
+        
+        # 添加聚合
+        final_plan = self.add_aggregation(best[frozenset(tables)], query.group_by)
+        return final_plan
+```
+
+## 4. 物化策略
+
+**决策依据**：
+- 中间结果需要多次使用 → 物化
+- 下游操作需要随机访问 → 物化
+- 中间结果很小 → 可物化
+- 内存足够 → 流水线
+
+**HashJoin**：必须物化内表构建哈希表
+**NestedLoopJoin**：可流水线驱动外表
+**Sort**：必须物化（外排序）
+
+```python
+def should_materialize(self, plan, parent_requirements):
+    if plan.output_rows < MEMORY_THRESHOLD:
+        return False  # 小结果，可直接传递
+    if parent_requirements.random_access:
+        return True  # 需要随机访问，物化
+    if plan.operator in [SORT, HASH_AGG]:
+        return True  # 操作本身需要物化
+    return False  # 默认流水线
+```
+
+## 5. 与PostgreSQL对比验证
+
+### 测试用例设计
+
+1. 小表连接，无索引
+2. 大表连接，有索引
+3. 高选择性范围过滤
+4. 低选择性范围过滤
+5. 三表连接
+6. 分组聚合
+7. 数据倾斜场景
+8. 内存限制场景
+9. 排序归并连接
+10. 哈希连接
+
+### 对比指标
+
+- 计划形状（连接顺序、方法）
+- 估算行数误差
+- 代价估计值
+
+**预期**：本优化器选择与PostgreSQL一致的方案，代价估计误差在50%以内。
+
+## 复杂度分析
+
+| 组件 | 时间复杂度 | 空间复杂度 |
+|------|-----------|-----------|
+| 基数估计 | O(1) | O(1) |
+| 代价计算 | O(1) | O(1) |
+| 计划枚举（DP） | O(n² × 2ⁿ) | O(2ⁿ) |
+
+对于3表连接，计划枚举在毫秒级完成。
+
+## 总结
+
+本优化器实现了基于代价的物理计划选择，支持多种扫描和连接方法，使用动态规划枚举最优计划，并提供物化策略决策。通过与PostgreSQL对比验证，确保选择合理执行方案。
