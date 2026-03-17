@@ -1,0 +1,251 @@
+{
+  "seats": [
+    {
+      "seat_id": "00001",
+      "name": "鬼谷子",
+      "archetype": "strategist",
+      "expertise_domains": [
+        "strategy",
+        "persuasion"
+      ],
+      "thinking_style": "analytical",
+      "cultural_lineage": "zongheng",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166916"
+    },
+    {
+      "seat_id": "00002",
+      "name": "苏秦",
+      "archetype": "diplomat",
+      "expertise_domains": [
+        "alliance",
+        "negotiation"
+      ],
+      "thinking_style": "collaborative",
+      "cultural_lineage": "zongheng",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166935"
+    },
+    {
+      "seat_id": "00003",
+      "name": "张仪",
+      "archetype": "strategist",
+      "expertise_domains": [
+        "strategy",
+        "deception"
+      ],
+      "thinking_style": "analytical",
+      "cultural_lineage": "zongheng",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166937"
+    },
+    {
+      "seat_id": "00004",
+      "name": "孔子",
+      "archetype": "sage",
+      "expertise_domains": [
+        "ethics",
+        "governance"
+      ],
+      "thinking_style": "principled",
+      "cultural_lineage": "ru",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166939"
+    },
+    {
+      "seat_id": "00005",
+      "name": "孟子",
+      "archetype": "sage",
+      "expertise_domains": [
+        "ethics",
+        "humanity"
+      ],
+      "thinking_style": "principled",
+      "cultural_lineage": "ru",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166941"
+    },
+    {
+      "seat_id": "00006",
+      "name": "老子",
+      "archetype": "sage",
+      "expertise_domains": [
+        "philosophy",
+        "nature"
+      ],
+      "thinking_style": "intuitive",
+      "cultural_lineage": "dao",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166943"
+    },
+    {
+      "seat_id": "00007",
+      "name": "庄子",
+      "archetype": "philosopher",
+      "expertise_domains": [
+        "philosophy",
+        "freedom"
+      ],
+      "thinking_style": "intuitive",
+      "cultural_lineage": "dao",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166944"
+    },
+    {
+      "seat_id": "00008",
+      "name": "韩非",
+      "archetype": "legalist",
+      "expertise_domains": [
+        "law",
+        "governance"
+      ],
+      "thinking_style": "analytical",
+      "cultural_lineage": "fa",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166946"
+    },
+    {
+      "seat_id": "00009",
+      "name": "商鞅",
+      "archetype": "legalist",
+      "expertise_domains": [
+        "law",
+        "reform"
+      ],
+      "thinking_style": "analytical",
+      "cultural_lineage": "fa",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166948"
+    },
+    {
+      "seat_id": "00010",
+      "name": "孙子",
+      "archetype": "strategist",
+      "expertise_domains": [
+        "warfare",
+        "strategy"
+      ],
+      "thinking_style": "analytical",
+      "cultural_lineage": "bing",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166949"
+    },
+    {
+      "seat_id": "00011",
+      "name": "吴起",
+      "archetype": "strategist",
+      "expertise_domains": [
+        "warfare",
+        "reform"
+      ],
+      "thinking_style": "pragmatic",
+      "cultural_lineage": "bing",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166951"
+    },
+    {
+      "seat_id": "00012",
+      "name": "管仲",
+      "archetype": "statesman",
+      "expertise_domains": [
+        "economics",
+        "governance"
+      ],
+      "thinking_style": "pragmatic",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166952"
+    },
+    {
+      "seat_id": "00013",
+      "name": "范蠡",
+      "archetype": "strategist",
+      "expertise_domains": [
+        "economics",
+        "strategy"
+      ],
+      "thinking_style": "pragmatic",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166954"
+    },
+    {
+      "seat_id": "00014",
+      "name": "吕不韦",
+      "archetype": "merchant",
+      "expertise_domains": [
+        "politics",
+        "commerce"
+      ],
+      "thinking_style": "opportunistic",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166956"
+    },
+    {
+      "seat_id": "00015",
+      "name": "李斯",
+      "archetype": "statesman",
+      "expertise_domains": [
+        "law",
+        "administration"
+      ],
+      "thinking_style": "pragmatic",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166957"
+    },
+    {
+      "seat_id": "00016",
+      "name": "张良",
+      "archetype": "strategist",
+      "expertise_domains": [
+        "strategy",
+        "counsel"
+      ],
+      "thinking_style": "analytical",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166959"
+    },
+    {
+      "seat_id": "00017",
+      "name": "萧何",
+      "archetype": "administrator",
+      "expertise_domains": [
+        "administration",
+        "logistics"
+      ],
+      "thinking_style": "pragmatic",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166960"
+    },
+    {
+      "seat_id": "00018",
+      "name": "韩信",
+      "archetype": "commander",
+      "expertise_domains": [
+        "warfare",
+        "tactics"
+      ],
+      "thinking_style": "bold",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166962"
+    },
+    {
+      "seat_id": "00019",
+      "name": "陈平",
+      "archetype": "strategist",
+      "expertise_domains": [
+        "intelligence",
+        "deception"
+      ],
+      "thinking_style": "cunning",
+      "cultural_lineage": "default",
+      "version": "1.0.0",
+      "created_at": "2026-03-11T19:35:48.166964"
+    }
+  ]
+}

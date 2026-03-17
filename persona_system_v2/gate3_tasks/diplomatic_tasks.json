@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "category": "diplomatic",
+    "description": "外交谈判类任务 - 联盟构建、信任建立、利益交换",
+    "count": 10,
+    "created_at": "2026-03-11",
+    "version": "1.0"
+  },
+  "tasks": [
+    {
+      "task_id": "diplomatic_001",
+      "name": "跨部门资源争夺战",
+      "complexity": 7,
+      "description": "公司 A 的预算紧缩，产品部和工程部都要争取同一笔资金。产品部希望加速功能开发，工程部希望偿还技术债务。作为CTO，需要调解冲突并达成共识。",
+      "requirements": [
+        "双方核心诉求分析",
+        "双赢方案设计",
+        "资源分配比例",
+        "后续冲突预防机制"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析双方 ≥3 个核心诉求",
+          "提出 ≥2 种双赢方案",
+          "明确资源分配比例及理由",
+          "建立后续沟通机制"
+        ],
+        "optional": [
+          "包含 KPI 平衡设计",
+          "包含跨部门协作流程",
+          "包含长期预算规划"
+        ]
+      },
+      "evaluation_rubric": {
+        "empathy": "对双方立场的理解深度",
+        "creativity": "双赢方案的创造性",
+        "fairness": "分配方案的公平性感知",
+        "sustainability": "长期关系维护"
+      },
+      "estimated_tokens": 8000,
+      "max_turns": 15
+    },
+    {
+      "task_id": "diplomatic_002",
+      "name": "战略合作伙伴谈判",
+      "complexity": 8,
+      "description": "公司 A 与潜在战略伙伴 B 谈判，B 要求独家合作权，但 A 希望保持灵活性。需要在保护核心利益的同时达成合作，谈判期限 2 周。",
+      "requirements": [
+        "谈判底线与让步空间",
+        "BATNA (最佳替代方案)",
+        "合同关键条款设计",
+        "退出机制"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "明确列出 A 的 ≥5 条底线",
+          "分析 B 的可能诉求和弱点",
+          "设计分级让步方案",
+          "包含非独家合作的替代方案"
+        ],
+        "optional": [
+          "包含谈判时间表",
+          "包含多轮报价策略",
+          "包含合同风险点"
+        ]
+      },
+      "evaluation_rubric": {
+        "preparation": "谈判准备的充分性",
+        "strategic_thinking": "战略思维深度",
+        "flexibility": "灵活性与原则性平衡",
+        "risk_management": "风险识别"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 17
+    },
+    {
+      "task_id": "diplomatic_003",
+      "name": "收购后文化融合",
+      "complexity": 9,
+      "description": "公司 A 收购了公司 B，但两公司文化差异巨大 (A 是激进创新型，B 是稳健保守型)。关键员工流失率已达 15%，需要制定文化融合策略。",
+      "requirements": [
+        "文化差异分析",
+        "融合策略选择",
+        "关键人才保留",
+        "冲突调解机制"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析 ≥3 个核心文化冲突点",
+          "选择融合模式 (同化/整合/分离/消亡)",
+          "提出关键人才保留方案",
+          "设计文化沟通计划"
+        ],
+        "optional": [
+          "包含文化评估指标",
+          "包含仪式和符号设计",
+          "包含100天行动计划"
+        ]
+      },
+      "evaluation_rubric": {
+        "cultural_awareness": "文化敏感性",
+        "integration_depth": "整合策略深度",
+        "practicality": "可执行性",
+        "human_focus": "以人为本"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 18
+    },
+    {
+      "task_id": "diplomatic_004",
+      "name": "客户重大投诉处理",
+      "complexity": 7,
+      "description": "公司 A 最大客户 (占营收 20%) 因产品故障遭受损失，威胁终止合作并要求赔偿。客户情绪激动，社交媒体上已开始负面传播。",
+      "requirements": [
+        "危机响应时间线",
+        "道歉与补偿方案",
+        "关系修复计划",
+        "预防再次发生"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "制定 24/48/72 小时响应计划",
+          "设计分层补偿方案",
+          "提出关系修复的 ≥3 个具体措施",
+          "包含公关应对策略"
+        ],
+        "optional": [
+          "包含客户高管面对面方案",
+          "包含 SLA 改进承诺",
+          "包含竞品防御策略"
+        ]
+      },
+      "evaluation_rubric": {
+        "urgency": "紧迫性处理",
+        "empathy": "共情表达",
+        "solution_quality": "解决方案质量",
+        "relationship_preservation": "关系保全"
+      },
+      "estimated_tokens": 8500,
+      "max_turns": 16
+    },
+    {
+      "task_id": "diplomatic_005",
+      "name": "投资人关系危机",
+      "complexity": 8,
+      "description": "公司 A 连续两个季度未达预期，投资人质疑管理层能力，有人提议更换 CEO。需要在即将到来的董事会上重建信任并争取支持。",
+      "requirements": [
+        "问题根因分析",
+        " recovery plan 展示",
+        "管理层调整方案",
+        "投资人沟通策略"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "诚实分析业绩差距原因",
+          "提供详细的复苏计划 (季度里程碑)",
+          "提出管理层改进措施",
+          "设计董事会沟通策略"
+        ],
+        "optional": [
+          "包含行业对比分析",
+          "包含管理层股权激励调整",
+          "包含独立董事增选"
+        ]
+      },
+      "evaluation_rubric": {
+        "transparency": "透明度",
+        "accountability": "问责态度",
+        "strategic_clarity": "战略清晰度",
+        "confidence_inspiring": "信心重建"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 17
+    },
+    {
+      "task_id": "diplomatic_006",
+      "name": "开源社区争议处理",
+      "complexity": 6,
+      "description": "公司 A 开源的核心项目被社区质疑不再开放，核心贡献者威胁分叉项目。需要处理社区关系，平衡商业利益与开源承诺。",
+      "requirements": [
+        "社区诉求分析",
+        "治理结构调整",
+        "商业边界澄清",
+        "贡献者激励"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "识别社区 ≥3 个核心关切",
+          "提出开源治理改进方案",
+          "明确商业版与社区版边界",
+          "设计贡献者认可机制"
+        ],
+        "optional": [
+          "包含基金会捐赠计划",
+          "包含核心开发者雇佣",
+          "包含路线图公开承诺"
+        ]
+      },
+      "evaluation_rubric": {
+        "community_understanding": "社区理解",
+        "openness_commitment": "开放性承诺",
+        "business_balance": "商业平衡",
+        "authenticity": "真诚度"
+      },
+      "estimated_tokens": 7500,
+      "max_turns": 14
+    },
+    {
+      "task_id": "diplomatic_007",
+      "name": "联合开发利益分配",
+      "complexity": 7,
+      "description": "公司 A 与 B 联合开发新产品，开发完成后双方对 IP 归属和收益分配产生分歧。需要重新谈判协议，避免合作破裂。",
+      "requirements": [
+        "贡献评估方法",
+        "IP 分割方案",
+        "收益分配模型",
+        "未来合作框架"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计客观的贡献评估标准",
+          "提出 IP 分割的 ≥2 种方案",
+          "明确收益分配比例计算方式",
+          "建立未来合作决策机制"
+        ],
+        "optional": [
+          "包含退出条款",
+          "包含竞业限制",
+          "包含后续迭代归属"
+        ]
+      },
+      "evaluation_rubric": {
+        "fairness": "公平性",
+        "objectivity": "客观性",
+        "forward_looking": "前瞻性",
+        "relationship_preservation": "关系维护"
+      },
+      "estimated_tokens": 8000,
+      "max_turns": 15
+    },
+    {
+      "task_id": "diplomatic_008",
+      "name": "政府监管沟通",
+      "complexity": 8,
+      "description": "监管机构拟出台新规可能严重影响公司 A 的商业模式。需要在法规正式出台前进行游说，争取更有利的条款。",
+      "requirements": [
+        "监管意图分析",
+        "行业联盟构建",
+        "替代方案提出",
+        "长期关系维护"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析监管机构的 ≥3 个核心关切",
+          "识别可争取的条款修改点",
+          "设计行业联合游说策略",
+          "提出建设性替代方案"
+        ],
+        "optional": [
+          "包含公众舆论策略",
+          "包含合规成本分析",
+          "包含国际对比研究"
+        ]
+      },
+      "evaluation_rubric": {
+        "policy_understanding": "政策理解",
+        "coalition_building": "联盟构建",
+        "negotiation_skill": "谈判技巧",
+        "compliance_awareness": "合规意识"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 17
+    },
+    {
+      "task_id": "diplomatic_009",
+      "name": "供应商关系重建",
+      "complexity": 6,
+      "description": "因付款延迟和沟通不畅，公司 A 与关键供应商关系恶化，供应商威胁断供。需要重建信任并确保供应链稳定。",
+      "requirements": [
+        "关系破裂原因分析",
+        "信任重建措施",
+        "合同条款重谈",
+        "预防机制"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析关系恶化的 ≥3 个根本原因",
+          "提出具体的信任重建措施",
+          "设计付款和沟通保障机制",
+          "建立供应商分级管理体系"
+        ],
+        "optional": [
+          "包含战略供应商股权合作",
+          "包含备选供应商激活",
+          "包含联合改进计划"
+        ]
+      },
+      "evaluation_rubric": {
+        "root_cause_analysis": "根因分析",
+        "trust_rebuilding": "信任重建",
+        "prevention": "预防机制",
+        "mutual_benefit": "双赢思维"
+      },
+      "estimated_tokens": 7500,
+      "max_turns": 14
+    },
+    {
+      "task_id": "diplomatic_010",
+      "name": "国际团队文化冲突",
+      "complexity": 7,
+      "description": "公司 A 的中美欧三地团队因文化差异和工作方式冲突导致项目延期。需要建立跨文化协作机制，提升全球团队效率。",
+      "requirements": [
+        "文化冲突点识别",
+        "沟通机制设计",
+        "决策流程优化",
+        "团队融合活动"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "识别 ≥3 个具体文化冲突场景",
+          "设计异步协作规范",
+          "优化跨时区决策流程",
+          "提出团队建设方案"
+        ],
+        "optional": [
+          "包含文化培训计划",
+          "包含跨国轮岗方案",
+          "包含全球统一工具栈"
+        ]
+      },
+      "evaluation_rubric": {
+        "cultural_sensitivity": "文化敏感性",
+        "practical_mechanism": "机制实用性",
+        "inclusiveness": "包容性",
+        "efficiency": "效率提升"
+      },
+      "estimated_tokens": 8000,
+      "max_turns": 15
+    }
+  ]
+}

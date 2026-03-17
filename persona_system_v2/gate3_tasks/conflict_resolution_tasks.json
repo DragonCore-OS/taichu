@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "category": "conflict_resolution",
+    "description": "冲突调解类任务 - 利益冲突、谈判策略、共识达成",
+    "count": 10,
+    "created_at": "2026-03-11",
+    "version": "1.0"
+  },
+  "tasks": [
+    {
+      "task_id": "conflict_001",
+      "name": "技术债务与功能开发之争",
+      "complexity": 7,
+      "description": "工程团队希望停止新功能开发6个月专注还债，产品团队坚持按路线图发布否则将失去市场。两边僵持不下，CEO要求快速决策。",
+      "requirements": [
+        "双方核心诉求分析",
+        "量化技术债务影响",
+        "平衡方案设计",
+        "决策执行机制"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "量化技术债务的业务影响",
+          "分析功能延迟的市场风险",
+          "提出 ≥2 种平衡方案",
+          "明确决策执行责任人"
+        ],
+        "optional": [
+          "包含资源调配方案",
+          "包含里程碑重排",
+          "包含团队激励调整"
+        ]
+      },
+      "evaluation_rubric": {
+        "data_driven": "数据驱动分析",
+        "balanced_solution": "方案平衡性",
+        "decisiveness": "决断力",
+        "stakeholder_management": "利益相关方管理"
+      },
+      "estimated_tokens": 8000,
+      "max_turns": 15
+    },
+    {
+      "task_id": "conflict_002",
+      "name": "创始团队股权纠纷",
+      "complexity": 9,
+      "description": "公司 A 三位联合创始人因贡献认知差异爆发股权纠纷，其中一位威胁退出并带走核心客户。需要快速调解避免公司分裂。",
+      "requirements": [
+        "历史贡献评估",
+        "股权调整方案",
+        "退出机制设计",
+        "关系修复计划"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "客观评估各方贡献",
+          "提出股权调整方案",
+          "设计vesting加速或回购条款",
+          "防止核心资产流失"
+        ],
+        "optional": [
+          "包含独立第三方评估",
+          "包含心理安全重建",
+          "包含公司治理改进"
+        ]
+      },
+      "evaluation_rubric": {
+        "fairness": "公平性",
+        "speed": "处理速度",
+        "legal_awareness": "法律意识",
+        "relationship_preservation": "关系保全"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 19
+    },
+    {
+      "task_id": "conflict_003",
+      "name": "合并部门冗余优化",
+      "complexity": 8,
+      "description": "公司 A 收购 B 后发现两部门职能重叠，需要裁员 30% 但保留关键人才。如何在裁员决策中平衡效率与公平，避免人才流失。",
+      "requirements": [
+        "能力评估框架",
+        "裁员选择标准",
+        "过渡支持方案",
+        "留人激励措施"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计客观的能力评估维度",
+          "明确裁员选择标准",
+          "制定被裁员工过渡方案",
+          "设计关键人才保留计划"
+        ],
+        "optional": [
+          "包含法律风险规避",
+          "包含团队士气维护",
+          "包含知识转移计划"
+        ]
+      },
+      "evaluation_rubric": {
+        "objectivity": "客观性",
+        "compassion": "同理心",
+        "strategic_thinking": "战略思维",
+        "execution_detail": "执行细节"
+      },
+      "estimated_tokens": 9500,
+      "max_turns": 18
+    },
+    {
+      "task_id": "conflict_004",
+      "name": "客户与产品需求冲突",
+      "complexity": 6,
+      "description": "最大客户要求定制功能，但会破坏产品标准化路线；拒绝可能失去客户，接受可能技术债务累积。产品、销售、技术三方争执。",
+      "requirements": [
+        "客户需求分析",
+        "技术影响评估",
+        "替代方案设计",
+        "长期关系策略"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析定制需求的真实价值",
+          "评估对标准化路线的技术影响",
+          "提出 ≥2 种替代方案",
+          "设计客户分层服务策略"
+        ],
+        "optional": [
+          "包含定价策略调整",
+          "包含产品模块化设计",
+          "包含客户成功计划"
+        ]
+      },
+      "evaluation_rubric": {
+        "customer_understanding": "客户理解",
+        "technical_judgment": "技术判断",
+        "negotiation_creativity": "谈判创造性",
+        "long_term_thinking": "长期思维"
+      },
+      "estimated_tokens": 7500,
+      "max_turns": 14
+    },
+    {
+      "task_id": "conflict_005",
+      "name": "远程办公政策争议",
+      "complexity": 5,
+      "description": "公司 A 要求员工每周回办公室3天，引发大规模抵触，部分核心员工威胁离职。管理层坚持协作需要面对面。需要调和矛盾。",
+      "requirements": [
+        "各方诉求分析",
+        "混合办公模式设计",
+        "绩效考核调整",
+        "文化维护措施"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析远程和办公室各自的优劣",
+          "设计灵活的分级政策",
+          "调整考核方式适应混合办公",
+          "提出文化维护方案"
+        ],
+        "optional": [
+          "包含办公空间重设计",
+          "包含异步协作工具",
+          "包含员工调研反馈"
+        ]
+      },
+      "evaluation_rubric": {
+        "empathy": "同理心",
+        "flexibility": "灵活性",
+        "practicality": "实用性",
+        "inclusiveness": "包容性"
+      },
+      "estimated_tokens": 7000,
+      "max_turns": 13
+    },
+    {
+      "task_id": "conflict_006",
+      "name": "董事会战略分歧",
+      "complexity": 8,
+      "description": "公司 A 董事会在是否进入新市场问题上分裂为两派，一派主张激进扩张，一派主张专注主业。投票可能破裂，需要调解达成共识。",
+      "requirements": [
+        "双方论据分析",
+        "风险量化对比",
+        "阶段性试点方案",
+        "决策机制改进"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "客观呈现两派的核心论据",
+          "量化两种路径的风险收益",
+          "提出试点或折中方案",
+          "设计后续决策触发条件"
+        ],
+        "optional": [
+          "包含独立董事意见",
+          "包含外部专家咨询",
+          "包含情景规划"
+        ]
+      },
+      "evaluation_rubric": {
+        "neutrality": "中立性",
+        "analytical_depth": "分析深度",
+        "consensus_building": "共识构建",
+        "strategic_clarity": "战略清晰度"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 17
+    },
+    {
+      "task_id": "conflict_007",
+      "name": "知识产权侵权争议",
+      "complexity": 7,
+      "description": "竞争对手指控公司 A 侵犯其专利，要求停止销售并赔偿。法务认为胜诉概率 50%，但诉讼将耗时 2 年影响融资。需要决策应对策略。",
+      "requirements": [
+        "法律风险分析",
+        "商业影响评估",
+        "应对策略选择",
+        "和解方案设计"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析诉讼各阶段的时间和成本",
+          "评估对融资和客户的具体影响",
+          "对比诉讼 vs 和解的利弊",
+          "设计和解的 BATNA"
+        ],
+        "optional": [
+          "包含专利无效策略",
+          "包含设计规避方案",
+          "包含保险对冲"
+        ]
+      },
+      "evaluation_rubric": {
+        "legal_awareness": "法律意识",
+        "risk_assessment": "风险评估",
+        "negotiation_strategy": "谈判策略",
+        "business_judgment": "商业判断"
+      },
+      "estimated_tokens": 8500,
+      "max_turns": 16
+    },
+    {
+      "task_id": "conflict_008",
+      "name": "供应商独家条款谈判",
+      "complexity": 6,
+      "description": "关键供应商要求签订独家供应协议，否则将优先供应竞争对手。独家条款将限制公司 A 的供应链灵活性，但失去该供应商成本极高。",
+      "requirements": [
+        "供应商依赖度分析",
+        "独家条款风险评估",
+        "谈判让步空间",
+        "替代方案准备"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "量化对该供应商的依赖程度",
+          "分析独家条款的 ≥3 个风险",
+          "设计分级让步方案",
+          "激活备选供应商计划"
+        ],
+        "optional": [
+          "包含长期供应协议",
+          "包含股权投资考虑",
+          "包含联合研发条款"
+        ]
+      },
+      "evaluation_rubric": {
+        "dependency_analysis": "依赖分析",
+        "risk_management": "风险管理",
+        "negotiation_skill": "谈判技巧",
+        "alternative_preparation": "备选准备"
+      },
+      "estimated_tokens": 7500,
+      "max_turns": 14
+    },
+    {
+      "task_id": "conflict_009",
+      "name": "项目优先级排序之争",
+      "complexity": 5,
+      "description": "公司 A 有 5 个重要项目同时争夺有限资源，各部门都认为自己的项目最紧急。CEO要求在一周内确定优先级，否则资源将被平均分配导致全部延期。",
+      "requirements": [
+        "评估框架设计",
+        "项目价值量化",
+        "资源分配方案",
+        "沟通与执行"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计多维度评估框架",
+          "对 5 个项目进行评分排序",
+          "明确资源分配比例",
+          "制定优先级调整触发条件"
+        ],
+        "optional": [
+          "包含项目组合优化",
+          "包含阶段门评审",
+          "包含资源冲突仲裁机制"
+        ]
+      },
+      "evaluation_rubric": {
+        "framework_rigor": "框架严谨性",
+        "objectivity": "客观性",
+        "communication": "沟通效果",
+        "decisiveness": "决断力"
+      },
+      "estimated_tokens": 7000,
+      "max_turns": 13
+    },
+    {
+      "task_id": "conflict_010",
+      "name": "团队Leader权力斗争",
+      "complexity": 7,
+      "description": "公司 A 两个技术团队Leader因架构方向争执不下，互相不配合导致项目停滞，各自拉拢下属形成派系。需要调解并恢复团队协作。",
+      "requirements": [
+        "冲突根因分析",
+        "技术方案仲裁",
+        "组织架构调整",
+        "团队文化修复"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析冲突的技术和人际根因",
+          "仲裁技术方向决策",
+          "提出组织架构调整建议",
+          "设计团队融合活动"
+        ],
+        "optional": [
+          "包含Leader coaching计划",
+          "包含跨团队协作流程",
+          "包含绩效评估调整"
+        ]
+      },
+      "evaluation_rubric": {
+        "root_cause_identification": "根因识别",
+        "technical_judgment": "技术判断",
+        "people_skills": "人际技巧",
+        "team_rebuilding": "团队重建"
+      },
+      "estimated_tokens": 8000,
+      "max_turns": 15
+    }
+  ]
+}

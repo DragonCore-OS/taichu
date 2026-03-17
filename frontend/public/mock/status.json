@@ -1,0 +1,29 @@
+{
+  "updated_at": "2026-03-11",
+  "commit": "e600650",
+  "round17": {
+    "step": 2,
+    "step_name": "误伤分型",
+    "alignment": 76,
+    "alignment_target": 75,
+    "overall_fb": 16,
+    "overall_fb_target": 15,
+    "live_auto_fb": 23.1,
+    "live_auto_fb_target": 20,
+    "status": "in_progress",
+    "status_label": "🔄 进行中"
+  },
+  "gate3": {
+    "phase": "phase_1_complete",
+    "phase_label": "Phase 1 完成",
+    "tasks_ready": 50,
+    "phase_2_status": "hold",
+    "phase_2_status_label": "⏸️ HOLD",
+    "phase_3_status": "locked",
+    "phase_3_status_label": "🔒 LOCKED"
+  },
+  "constraints": [
+    "不抢跑 Phase 2",
+    "不绕过 Gate 3"
+  ]
+}

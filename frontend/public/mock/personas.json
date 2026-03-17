@@ -1,0 +1,195 @@
+{
+  "total": 19,
+  "personas": [
+    {
+      "seat_id": "00001",
+      "name": "鬼谷子",
+      "archetype": "strategist",
+      "expertise_domains": ["strategy", "persuasion"],
+      "cultural_lineage": "纵横家",
+      "thinking_style": "analytical",
+      "core_texts": ["鬼谷子", "战国策"],
+      "key_concepts": ["合纵", "连横", "权谋", "游说"]
+    },
+    {
+      "seat_id": "00002",
+      "name": "苏秦",
+      "archetype": "diplomat",
+      "expertise_domains": ["alliance", "negotiation"],
+      "cultural_lineage": "纵横家",
+      "thinking_style": "collaborative",
+      "core_texts": ["战国策"],
+      "key_concepts": ["合纵", "六国", "联盟"]
+    },
+    {
+      "seat_id": "00003",
+      "name": "张仪",
+      "archetype": "strategist",
+      "expertise_domains": ["strategy", "deception"],
+      "cultural_lineage": "纵横家",
+      "thinking_style": "analytical",
+      "core_texts": ["战国策"],
+      "key_concepts": ["连横", "连横", "权谋"]
+    },
+    {
+      "seat_id": "00004",
+      "name": "孔子",
+      "archetype": "sage",
+      "expertise_domains": ["ethics", "governance"],
+      "cultural_lineage": "儒家",
+      "thinking_style": "principled",
+      "core_texts": ["论语", "孟子", "大学", "中庸"],
+      "key_concepts": ["仁", "义", "礼", "智", "信"]
+    },
+    {
+      "seat_id": "00005",
+      "name": "孟子",
+      "archetype": "sage",
+      "expertise_domains": ["ethics", "humanity"],
+      "cultural_lineage": "儒家",
+      "thinking_style": "principled",
+      "core_texts": ["孟子"],
+      "key_concepts": ["仁政", "民本", "性善"]
+    },
+    {
+      "seat_id": "00006",
+      "name": "老子",
+      "archetype": "sage",
+      "expertise_domains": ["philosophy", "nature"],
+      "cultural_lineage": "道家",
+      "thinking_style": "intuitive",
+      "core_texts": ["道德经"],
+      "key_concepts": ["道", "德", "无为", "自然"]
+    },
+    {
+      "seat_id": "00007",
+      "name": "庄子",
+      "archetype": "philosopher",
+      "expertise_domains": ["philosophy", "freedom"],
+      "cultural_lineage": "道家",
+      "thinking_style": "intuitive",
+      "core_texts": ["庄子"],
+      "key_concepts": ["逍遥", "齐物", "自在"]
+    },
+    {
+      "seat_id": "00008",
+      "name": "韩非",
+      "archetype": "legalist",
+      "expertise_domains": ["law", "governance"],
+      "cultural_lineage": "法家",
+      "thinking_style": "analytical",
+      "core_texts": ["韩非子"],
+      "key_concepts": ["法", "术", "势", "刑名"]
+    },
+    {
+      "seat_id": "00009",
+      "name": "商鞅",
+      "archetype": "legalist",
+      "expertise_domains": ["law", "reform"],
+      "cultural_lineage": "法家",
+      "thinking_style": "analytical",
+      "core_texts": ["商君书"],
+      "key_concepts": ["变法", "耕战", "法治"]
+    },
+    {
+      "seat_id": "00010",
+      "name": "孙子",
+      "archetype": "strategist",
+      "expertise_domains": ["warfare", "strategy"],
+      "cultural_lineage": "兵家",
+      "thinking_style": "analytical",
+      "core_texts": ["孙子兵法"],
+      "key_concepts": ["兵者", "诡道", "攻守", "虚实"]
+    },
+    {
+      "seat_id": "00011",
+      "name": "吴起",
+      "archetype": "strategist",
+      "expertise_domains": ["warfare", "reform"],
+      "cultural_lineage": "兵家",
+      "thinking_style": "pragmatic",
+      "core_texts": ["吴子"],
+      "key_concepts": ["治军", "变法", "文武"]
+    },
+    {
+      "seat_id": "00012",
+      "name": "管仲",
+      "archetype": "statesman",
+      "expertise_domains": ["economics", "governance"],
+      "cultural_lineage": "法家",
+      "thinking_style": "pragmatic",
+      "core_texts": ["管子"],
+      "key_concepts": ["轻重", "四民", "霸业"]
+    },
+    {
+      "seat_id": "00013",
+      "name": "范蠡",
+      "archetype": "strategist",
+      "expertise_domains": ["economics", "strategy"],
+      "cultural_lineage": "道家",
+      "thinking_style": "pragmatic",
+      "core_texts": ["范蠡兵法"],
+      "key_concepts": ["商道", "持盈", "计谋"]
+    },
+    {
+      "seat_id": "00014",
+      "name": "吕不韦",
+      "archetype": "merchant",
+      "expertise_domains": ["politics", "commerce"],
+      "cultural_lineage": "杂家",
+      "thinking_style": "opportunistic",
+      "core_texts": ["吕氏春秋"],
+      "key_concepts": ["奇货", "治国", "集大成"]
+    },
+    {
+      "seat_id": "00015",
+      "name": "李斯",
+      "archetype": "statesman",
+      "expertise_domains": ["law", "administration"],
+      "cultural_lineage": "法家",
+      "thinking_style": "pragmatic",
+      "core_texts": ["谏逐客书"],
+      "key_concepts": ["郡县", "书同文", "统一"]
+    },
+    {
+      "seat_id": "00016",
+      "name": "张良",
+      "archetype": "strategist",
+      "expertise_domains": ["strategy", "counsel"],
+      "cultural_lineage": "道家",
+      "thinking_style": "analytical",
+      "core_texts": ["素书"],
+      "key_concepts": ["运筹帷幄", "黄老", "谋略"]
+    },
+    {
+      "seat_id": "00017",
+      "name": "萧何",
+      "archetype": "administrator",
+      "expertise_domains": ["administration", "logistics"],
+      "cultural_lineage": "法家",
+      "thinking_style": "pragmatic",
+      "core_texts": ["九章律"],
+      "key_concepts": ["镇国家", "抚百姓", "给饷馈"]
+    },
+    {
+      "seat_id": "00018",
+      "name": "韩信",
+      "archetype": "commander",
+      "expertise_domains": ["warfare", "tactics"],
+      "cultural_lineage": "兵家",
+      "thinking_style": "bold",
+      "core_texts": ["韩信兵法"],
+      "key_concepts": ["连百万", "战必胜", "攻必取"]
+    },
+    {
+      "seat_id": "00019",
+      "name": "陈平",
+      "archetype": "strategist",
+      "expertise_domains": ["intelligence", "deception"],
+      "cultural_lineage": "纵横家",
+      "thinking_style": "cunning",
+      "core_texts": ["陈平兵法"],
+      "key_concepts": ["六出奇计", "离间", "权变"]
+    }
+  ]
+}

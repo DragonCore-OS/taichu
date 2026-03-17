@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "category": "crisis_response",
+    "description": "危机应对类任务 - 紧急决策、风险管控、声誉修复",
+    "count": 10,
+    "created_at": "2026-03-11",
+    "version": "1.0"
+  },
+  "tasks": [
+    {
+      "task_id": "crisis_001",
+      "name": "生产环境重大故障",
+      "complexity": 9,
+      "description": "公司 A 核心生产系统凌晨 2 点崩溃，影响 1000 万用户，预估每小时损失 100 万。团队已奋战 6 小时仍未定位根因，客户投诉激增，媒体开始关注。",
+      "requirements": [
+        "应急响应时间线",
+        "故障隔离与止损",
+        "根因分析与修复",
+        "事后复盘与改进"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "制定 0-1h, 1-4h, 4-24h 响应计划",
+          "明确故障隔离决策",
+          "设计客户沟通策略",
+          "包含事后复盘框架"
+        ],
+        "optional": [
+          "包含降级服务方案",
+          "包含第三方背锅隔离",
+          "包含保险理赔准备"
+        ]
+      },
+      "evaluation_rubric": {
+        "urgency_response": "紧急响应速度",
+        "systematic_thinking": "系统性思维",
+        "communication": "危机沟通",
+        "prevention": "预防改进"
+      },
+      "estimated_tokens": 10000,
+      "max_turns": 19
+    },
+    {
+      "task_id": "crisis_002",
+      "name": "数据泄露紧急应对",
+      "complexity": 9,
+      "description": "公司 A 发现用户数据库被入侵，500 万用户个人信息可能泄露。监管要求 72 小时内报告，用户开始在社交媒体聚集声讨。",
+      "requirements": [
+        "72小时应急计划",
+        "监管与法律应对",
+        "用户通知策略",
+        "取证与加固"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "制定 0-24h, 24-72h 详细时间线",
+          "明确监管报告策略",
+          "设计用户分层通知方案",
+          "包含安全加固措施"
+        ],
+        "optional": [
+          "包含暗网监控",
+          "包含身份保护服务",
+          "包含安全审计计划"
+        ]
+      },
+      "evaluation_rubric": {
+        "speed": "响应速度",
+        "transparency": "透明度",
+        "legal_compliance": "法律合规",
+        "trust_rebuilding": "信任重建"
+      },
+      "estimated_tokens": 10500,
+      "max_turns": 20
+    },
+    {
+      "task_id": "crisis_003",
+      "name": "关键高管突然离职",
+      "complexity": 7,
+      "description": "CTO 突然宣布离职并加入竞争对手，带走 3 名核心架构师。团队士气低落，投资人质疑管理层稳定性，竞争对手开始挖人。",
+      "requirements": [
+        "即时代理安排",
+        "团队稳定措施",
+        "知识转移保障",
+        "竞业限制执行"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "制定 0-7 天过渡期计划",
+          "设计团队沟通方案",
+          "确保关键知识转移",
+          "启动竞业调查"
+        ],
+        "optional": [
+          "包含外部CTO招聘",
+          "包含内部晋升方案",
+          "包含股权激励调整"
+        ]
+      },
+      "evaluation_rubric": {
+        "speed": "响应速度",
+        "continuity": "业务连续性",
+        "team_morale": "团队士气",
+        "legal_protection": "法律保护"
+      },
+      "estimated_tokens": 8500,
+      "max_turns": 16
+    },
+    {
+      "task_id": "crisis_004",
+      "name": "供应链突然中断",
+      "complexity": 8,
+      "description": "核心供应商工厂因火灾停产，预计 3 个月无法恢复。公司 A 库存仅够 2 周，其他供应商产能已被锁定，客户订单面临大规模违约。",
+      "requirements": [
+        "库存优化分配",
+        "替代供应商激活",
+        "客户沟通与延期",
+        "长期供应链重构"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计库存分配优先级",
+          "启动 ≥2 家备选供应商",
+          "制定客户分层沟通方案",
+          "提出长期多源采购计划"
+        ],
+        "optional": [
+          "包含空运等紧急物流",
+          "包含客户赔偿方案",
+          "包含竞争对手客户争取"
+        ]
+      },
+      "evaluation_rubric": {
+        "resourcefulness": "资源整合能力",
+        "prioritization": "优先级判断",
+        "stakeholder_management": "利益相关方管理",
+        "long_term_fix": "长期解决"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 17
+    },
+    {
+      "task_id": "crisis_005",
+      "name": "产品安全事故召回",
+      "complexity": 8,
+      "description": "公司 A 的硬件产品被发现安全隐患，可能导致用户受伤。已售出 50 万台，监管机构要求召回。召回成本可能使公司破产。",
+      "requirements": [
+        "召回范围决策",
+        "用户安全优先",
+        "成本控制策略",
+        "品牌修复计划"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "评估不同召回范围的风险成本",
+          "设计用户通知和回收流程",
+          "提出成本分摊方案",
+          "制定品牌修复时间表"
+        ],
+        "optional": [
+          "包含保险理赔",
+          "包含供应商责任追溯",
+          "包含产品改进重发"
+        ]
+      },
+      "evaluation_rubric": {
+        "safety_first": "安全第一",
+        "financial_judgment": "财务判断",
+        "execution_speed": "执行速度",
+        "reputation_recovery": "声誉恢复"
+      },
+      "estimated_tokens": 9500,
+      "max_turns": 18
+    },
+    {
+      "task_id": "crisis_006",
+      "name": "舆论危机公关",
+      "complexity": 7,
+      "description": "公司 A 前员工在社交媒体爆料内部管理问题，帖子 viral 获得 100 万阅读，主流媒体开始跟进。公司形象严重受损，招聘和股价受影响。",
+      "requirements": [
+        "舆情监测与分析",
+        "回应策略选择",
+        "内部沟通同步",
+        "长期形象修复"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "分析舆情发展脉络",
+          "选择回应策略 (否认/道歉/澄清)",
+          "设计内外沟通口径",
+          "提出后续形象改善措施"
+        ],
+        "optional": [
+          "包含法律维权",
+          "包含第三方背书",
+          "包含员工关怀计划"
+        ]
+      },
+      "evaluation_rubric": {
+        "speed": "响应速度",
+        "authenticity": "真诚度",
+        "message_control": "信息控制",
+        "stakeholder_alignment": "利益相关方对齐"
+      },
+      "estimated_tokens": 8500,
+      "max_turns": 16
+    },
+    {
+      "task_id": "crisis_007",
+      "name": "资金链断裂预警",
+      "complexity": 8,
+      "description": "公司 A 现金流即将断裂，工资和供应商付款面临违约。应收账款回收缓慢，银行贷款审批中，投资人观望。需要紧急融资或变现。",
+      "requirements": [
+        "现金流优化",
+        "紧急融资方案",
+        "成本削减计划",
+        "最坏情况预案"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "梳理可变现资产和应收",
+          "设计多渠道融资方案",
+          "制定分级成本削减",
+          "准备破产保护预案"
+        ],
+        "optional": [
+          "包含员工股权置换",
+          "包含客户预付款方案",
+          "包含资产出售"
+        ]
+      },
+      "evaluation_rubric": {
+        "financial_acumen": "财务敏锐度",
+        "creativity": "创造性",
+        "stakeholder_fairness": "利益相关方公平",
+        "risk_management": "风险管理"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 17
+    },
+    {
+      "task_id": "crisis_008",
+      "name": "监管突击检查",
+      "complexity": 7,
+      "description": "监管机构突然对公司 A 进行反垄断调查，要求提供过去 5 年所有合同和通信记录。团队陷入恐慌，客户开始观望，律师建议准备巨额罚款。",
+      "requirements": [
+        "证据保全与提供",
+        "合规自查",
+        "外部沟通控制",
+        "防御策略准备"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "设计证据收集和保护流程",
+          "开展内部合规自查",
+          "统一对外沟通口径",
+          "准备法律防御方案"
+        ],
+        "optional": [
+          "包含行业协会联合",
+          "包含政府关系协调",
+          "包含媒体引导"
+        ]
+      },
+      "evaluation_rubric": {
+        "legal_awareness": "法律意识",
+        "systematic_response": "系统性响应",
+        "communication_control": "沟通控制",
+        "preparation": "准备充分度"
+      },
+      "estimated_tokens": 8500,
+      "max_turns": 16
+    },
+    {
+      "task_id": "crisis_009",
+      "name": "核心代码泄露",
+      "complexity": 8,
+      "description": "公司 A 核心算法代码被泄露到 GitHub，已被 Fork 200+ 次。该代码是核心竞争优势，泄露可能导致竞争对手快速复制。DMCA 下架需要时间。",
+      "requirements": [
+        "泄露范围评估",
+        "法律行动",
+        "技术应对",
+        "竞争策略调整"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "评估泄露代码的核心程度",
+          "启动法律下架和追责",
+          "设计技术混淆或重构方案",
+          "调整竞争策略应对"
+        ],
+        "optional": [
+          "包含开源化策略",
+          "包含专利申请加速",
+          "包含技术路线调整"
+        ]
+      },
+      "evaluation_rubric": {
+        "speed": "响应速度",
+        "technical_judgment": "技术判断",
+        "legal_effectiveness": "法律有效性",
+        "strategic_adaptation": "战略适应"
+      },
+      "estimated_tokens": 9000,
+      "max_turns": 17
+    },
+    {
+      "task_id": "crisis_010",
+      "name": "自然灾害业务连续性",
+      "complexity": 7,
+      "description": "公司 A 主数据中心所在地区遭遇地震，数据中心受损无法运行。灾备中心容量仅够 30% 业务，RTO 要求 4 小时，当前已过去 2 小时。",
+      "requirements": [
+        "业务优先级排序",
+        "灾备切换决策",
+        "客户沟通",
+        "数据恢复计划"
+      ],
+      "success_criteria": {
+        "mandatory": [
+          "制定业务分级恢复计划",
+          "决策灾备切换范围",
+          "设计客户分层通知",
+          "启动数据恢复流程"
+        ],
+        "optional": [
+          "包含云厂商紧急扩容",
+          "包含第三方灾备激活",
+          "包含员工远程协作"
+        ]
+      },
+      "evaluation_rubric": {
+        "prioritization": "优先级判断",
+        "decisiveness": "决断力",
+        "execution": "执行力",
+        "communication": "沟通效果"
+      },
+      "estimated_tokens": 8500,
+      "max_turns": 16
+    }
+  ]
+}
